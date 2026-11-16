@@ -1,7 +1,7 @@
 // Offline support.
 // Pages, scripts and data: network first (so new points show up as soon as you are online),
 // falling back to the last copy seen. Images: cache first.
-const CACHE = 'whac-v4';
+const CACHE = 'whac-v5';
 const SHELL = [
   './',
   'index.html',

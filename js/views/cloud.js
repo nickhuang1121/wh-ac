@@ -19,7 +19,7 @@ export function view(page, selectedId) {
   function draw() {
     if (!user) {
       panel.innerHTML = String(html`
-        <p>登入後可將本機軍表存到雲端，並在其他裝置用同一個 Google 帳號載入。</p>
+        <p>目前未開放註冊，請使用已授權的 Google 帳號登入。</p>
         <button type="button" class="btn primary" data-act="login">使用 Google 登入</button>`);
       return;
     }
