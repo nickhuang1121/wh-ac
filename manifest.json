@@ -1,0 +1,16 @@
+{
+  "name": "帝皇禁軍 11 版速查",
+  "short_name": "帝皇禁軍",
+  "description": "戰鎚 40K 帝皇禁軍 11 版中文規則速查、組軍表與遊玩輔助（愛好者自製，非官方）",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#121110",
+  "theme_color": "#14120f",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

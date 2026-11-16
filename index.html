@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>帝皇禁軍 11 版速查</title>
+  <meta name="description" content="戰鎚 40K 帝皇禁軍 11 版中文規則速查、組軍表與遊玩輔助（愛好者自製，非官方）">
+  <meta name="theme-color" content="#14120f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply the saved theme before first paint
+    try {
+      var s = JSON.parse(localStorage.getItem('whac.settings.v1') || '{}');
+      if (s.theme === 'light' || s.theme === 'dark') document.documentElement.dataset.theme = s.theme;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+
+  <header class="top">
+    <a class="brand" href="#/" aria-label="首頁">
+      <img src="icons/icon-192.png" alt="" width="28" height="28">
+      <span>帝皇禁軍<small>11 版速查</small></span>
+    </a>
+    <form class="search" id="search-form" role="search">
+      <input id="search-input" type="search" placeholder="搜尋單位、技能、戰略技能…" aria-label="搜尋" autocomplete="off" enterkeyhint="search">
+    </form>
+  </header>
+
+  <nav class="tabs" aria-label="主選單">
+    <a href="#/units" data-nav="units"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-2.9 8.3-7 10-4.1-1.7-7-5.5-7-10V6z"/></svg><span>單位</span></a>
+    <a href="#/rules" data-nav="rules"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3"/></svg><span>規則</span></a>
+    <a href="#/lists" data-nav="lists"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>軍表</span></a>
+    <a href="#/play" data-nav="play"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h.01M15 9h.01M12 12h.01M9 15h.01M15 15h.01"/></svg><span>遊玩</span></a>
+    <a href="#/points" data-nav="points"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg><span>分數</span></a>
+  </nav>
+
+  <main id="main" tabindex="-1">
+    <p class="loading">載入資料中…</p>
+  </main>
+
+  <div id="toast" popover="manual" role="status" aria-live="polite"></div>
+  <div id="print-root"></div>
+
+  <noscript><p style="padding:1rem">這個網站需要啟用 JavaScript。</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

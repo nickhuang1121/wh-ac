@@ -1,0 +1,1466 @@
+[
+  {
+    "id": "trajann-valoris",
+    "name": "圖拉真 · 瓦洛里斯",
+    "en": "TRAJAAN VALORIS",
+    "page": 19,
+    "section": "帝皇禁軍",
+    "group": "人物",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "10", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊", "不覺疼痛5+", "領袖"],
+    "factionAbilities": ["御林武藝", "天鷹指揮官", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "在世軍神（光環）",
+        "text": ["位於本模型6寸內的友方帝皇禁軍單位（載具/巨獸 除外）能夠", "■ 重投結果為1的命中骰", "■ 重投結果為1的造傷骰"]
+      },
+      {
+        "name": "瞬時枷鎖",
+        "text": ["任意階段開始時，直到該階段結束，你可以選擇以下能力之一生效：", "■ 本模型的守望者之斧武器獲得+3 A", "■ 本模型獲得3+特殊保護"],
+        "limit": "全軍每場戰鬥一次",
+        "once": "battle"
+      },
+      {
+        "name": "至高指揮官",
+        "text": ["若你的軍隊中包含本模型，本模型必須成為主將"]
+      }
+    ],
+    "ranged": [
+      { "name": "蒼鷹銳鳴", "range": "24", "a": "2", "skill": "2+", "s": "6", "ap": "-2", "d": "2", "kw": "突擊，速射2" }
+    ],
+    "melee": [
+      { "name": "守望者之斧", "range": "近戰", "a": "6", "skill": "2+", "s": "12", "ap": "-3", "d": "4", "kw": "劈砍 1" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "人物", "史詩英雄", "帝國"],
+    "comp": "1個圖拉真·瓦洛里斯模型",
+    "gear": ["本模型裝備有：蒼鷹銳鳴，守望者之斧"],
+    "leads": ["sentinel-guard", "custodian-guard", "custodian-wardens", "allarus-custodians", "aquilon-gauntlets", "aquilon-talons"],
+    "leadsNote": "（LEGENDS單位未寫入此處）",
+    "mustBeWarlord": true,
+    "image": "img/units/trajann-valoris.webp"
+  },
+  {
+    "id": "shield-captain",
+    "name": "盾衛連長",
+    "en": "SHIELD CAPTAIN",
+    "page": 20,
+    "section": "帝皇禁軍",
+    "group": "人物",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "8", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊", "領袖"],
+    "factionAbilities": ["御林武藝", "天鷹指揮官", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "武藝宗師",
+        "text": ["若本單位未處於備戰狀態，你可以使用此能力，本單位進入備戰狀態"],
+        "limit": "每個單位每個戰鬥輪一次",
+        "once": "round"
+      },
+      {
+        "name": "復仇之潮",
+        "text": ["敵方射擊階段中，一個敵方單位完成射擊後，若本單位中有模型因上述攻擊失去耐傷（W值），本單位可以進行一次至多D6+2 寸的血湧移動"],
+        "limit": "每個單位每場戰鬥一次",
+        "once": "battle"
+      },
+      {
+        "name": "守護之盾",
+        "text": ["以本模型為目標的攻擊獲得-1D"]
+      }
+    ],
+    "ranged": [
+      { "name": "堡主戰斧", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" },
+      { "name": "戍衛之矛", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" },
+      { "name": "煉獄之矛", "range": "12", "a": "1", "skill": "2+", "s": "10", "ap": "-3", "d": "D3+2", "kw": "突擊，熱熔2" }
+    ],
+    "melee": [
+      { "name": "堡主戰斧", "range": "近戰", "a": "5", "skill": "2+", "s": "10", "ap": "-2", "d": "4", "kw": "" },
+      { "name": "永恆之刃", "range": "近戰", "a": "6", "skill": "2+", "s": "10", "ap": "-3", "d": "3", "kw": "精準" },
+      { "name": "戍衛之矛", "range": "近戰", "a": "8", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "劈砍 1" },
+      { "name": "煉獄之矛", "range": "近戰", "a": "8", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "劈砍 1" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "人物", "帝國", "盾衛連長"],
+    "comp": "1個盾衛連長模型",
+    "gear": ["本模型裝備有：一柄煉獄之矛，一面守護之盾", "● 本模型裝備的煉獄之矛可替換為一柄永恆之刃", "● 本模型裝備的煉獄之矛和守護之盾可以替換為以下選項之一：", "■ 一柄堡主戰斧", "■ 一柄戍衛之矛"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "pyrithite-shield", "label": "煉獄之矛、守護之盾" },
+          { "id": "blade-shield", "label": "永恆之刃、守護之盾" },
+          { "id": "axe", "label": "堡主戰斧" },
+          { "id": "guardian-spear", "label": "戍衛之矛" }
+        ]
+      }
+    ],
+    "leads": ["sentinel-guard", "custodian-guard", "custodian-wardens"],
+    "image": "img/units/shield-captain.webp"
+  },
+  {
+    "id": "shield-captain-allarus",
+    "name": "盾衛連長穿著阿拉琉斯終結者裝甲",
+    "en": "SHIELD CAPTAIN IN ALLARUS TERMINATOR ARMOUR",
+    "page": 21,
+    "section": "帝皇禁軍",
+    "group": "人物",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "7", "T": "8", "SV": "2+", "W": "9", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊", "領袖"],
+    "factionAbilities": ["御林武藝", "天鷹指揮官", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "武藝宗師",
+        "text": ["若本單位未處於備戰狀態，你可以使用此能力，本單位進入備戰狀態"],
+        "limit": "每個單位每個戰鬥輪一次",
+        "once": "round"
+      },
+      {
+        "name": "遠古科技傳送裝置",
+        "text": ["你的移動階段中，若本單位未接戰且尚未在本階段被選中進行移動，你可以使用此能力。將本單位放入戰略預備隊中，且本單位必須在本階段進行一次入場移動"],
+        "limit": "每個單位每場戰鬥一次",
+        "once": "battle"
+      }
+    ],
+    "ranged": [
+      { "name": "堡主戰斧", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" },
+      { "name": "戍衛之矛", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" },
+      { "name": "鐵騎榴彈發射器", "range": "18", "a": "3", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "突擊，爆炸1" }
+    ],
+    "melee": [
+      { "name": "堡主戰斧", "range": "近戰", "a": "5", "skill": "2+", "s": "10", "ap": "-2", "d": "4", "kw": "" },
+      { "name": "戍衛之矛", "range": "近戰", "a": "8", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "劈砍 1" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "人物", "帝國", "盾衛連長", "終結者"],
+    "comp": "1個盾衛連長穿著阿拉琉斯終結者裝甲模型",
+    "gear": ["本模型裝備有：一門鐵騎榴彈發射器，一柄戍衛之矛", "● 本模型裝備的戍衛之矛可替換為一柄堡主戰斧"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "guardian-spear", "label": "戍衛之矛" },
+          { "id": "axe", "label": "堡主戰斧" }
+        ]
+      }
+    ],
+    "leads": ["allarus-custodians", "aquilon-gauntlets", "aquilon-talons"],
+    "image": "img/units/shield-captain-allarus.webp"
+  },
+  {
+    "id": "shield-captain-jetbike",
+    "name": "盾衛連長騎乘晨鷹懸浮摩托",
+    "en": "SHIELD CAPTAIN ON DAWNEAGLE JETBIKE",
+    "page": 22,
+    "section": "帝皇禁軍",
+    "group": "人物",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "12", "T": "8", "SV": "2+", "W": "10", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊", "領袖"],
+    "factionAbilities": ["御林武藝", "天鷹指揮官", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "武藝宗師",
+        "text": ["若本單位未處於備戰狀態，你可以使用此能力，本單位進入備戰狀態"],
+        "limit": "每個單位每個戰鬥輪一次",
+        "once": "round"
+      },
+      {
+        "name": "掃蕩突進",
+        "text": ["近戰階段結束時，若本單位在本階段中能夠進行近戰：", "■ 如果本單位未接戰，則本單位可以進行一次常規移動；", "■ 如果本單位接戰，則本單位可以進行一次撤退"],
+        "limit": "每個單位每場戰鬥一次",
+        "once": "battle"
+      }
+    ],
+    "ranged": [
+      { "name": "颶風爆彈槍", "range": "18", "a": "3", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "雙聯，速射3" },
+      { "name": "集束導彈", "range": "24", "a": "2", "skill": "2+", "s": "10", "ap": "-2", "d": "D3+2", "kw": "" }
+    ],
+    "melee": [
+      { "name": "攔截騎槍", "range": "近戰", "a": "8", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "騎槍" }
+    ],
+    "base": "75×42mm飛行橢圓底盤",
+    "keywords": ["騎乘", "人物", "飛行", "帝國", "盾衛連長"],
+    "comp": "1個盾衛連長騎乘晨鷹懸浮摩托模型",
+    "gear": ["本模型裝備有：一具集束導彈，一柄攔截騎槍", "● 本模型裝備的集束導彈可替換為一把颶風爆彈槍"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "missile", "label": "集束導彈" },
+          { "id": "bolter", "label": "颶風爆彈槍" }
+        ]
+      }
+    ],
+    "leads": ["vertus-praetors", "gyrfalcon-jetbikes"],
+    "image": "img/units/shield-captain-jetbike.webp"
+  },
+  {
+    "id": "blade-champion",
+    "name": "劍鋒冠軍",
+    "en": "BLADE CHAMPION",
+    "page": 23,
+    "section": "帝皇禁軍",
+    "group": "人物",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "7", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊", "領袖"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "迅捷突襲",
+        "text": ["本單位能夠重投加速骰和衝鋒骰"]
+      },
+      {
+        "name": "王座之劍",
+        "text": ["第一個戰鬥輪次開始時，選擇一個敵方單位被本模型標記；", "■ 本模型攻擊被標記模型時造傷骰結果+1", "■ 每當被標記單位被消滅，選擇一個敵方單位被本模型標記"]
+      }
+    ],
+    "ranged": [],
+    "melee": [
+      { "name": "秘藏之劍-屠獸", "range": "近戰", "a": "5", "skill": "2+", "s": "10", "ap": "-3", "d": "3", "kw": "毀滅傷害" },
+      { "name": "秘藏之劍-破陣", "range": "近戰", "a": "10", "skill": "2+", "s": "6", "ap": "-2", "d": "1", "kw": "劈砍 1，連擊 1" },
+      { "name": "秘藏之劍-斬將", "range": "近戰", "a": "8", "skill": "2+", "s": "8", "ap": "-3", "d": "2", "kw": "精準" }
+    ],
+    "meleeNote": "秘藏之劍：為本武器選擇目標之前，選擇以下選項之一",
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "人物", "帝國"],
+    "comp": "1個劍鋒冠軍模型",
+    "gear": ["本模型裝備有：秘藏之劍"],
+    "leads": ["sentinel-guard", "custodian-guard", "custodian-wardens"],
+    "image": "img/units/blade-champion.webp"
+  },
+  {
+    "id": "sentinel-guard",
+    "name": "禁軍哨衛兄弟會",
+    "en": "SENTIEL GUARD SODALITY",
+    "page": 24,
+    "section": "帝皇禁軍",
+    "group": "戰線",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "5", "LD": "5+", "OC": "3" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "永恆守望",
+        "text": ["滿足以下條件時，本單位的攻擊擁有【致命一擊：非載具/巨獸】", "■ 本單位位於任務點範圍內", "■ 上述攻擊的目標位於任務點範圍內"]
+      },
+      {
+        "name": "守護之盾",
+        "text": ["以本單位為目標的攻擊的 S 值比本單位的 T 值更高時，上述攻擊的造傷骰結果-1"]
+      },
+      {
+        "name": "禁衛旌旗",
+        "text": ["■ 本單位獲得+1OC", "■ 本單位無視對 LD 的修正"]
+      }
+    ],
+    "ranged": [
+      { "name": "哨戒之劍", "range": "12", "a": "4", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，近距離交戰" }
+    ],
+    "melee": [
+      { "name": "哨戒之劍", "range": "近戰", "a": "5", "skill": "2+", "s": "6", "ap": "-2", "d": "2", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "戰線", "帝國", "誓言衛士"],
+    "comp": "3個禁軍哨衛模型",
+    "gear": ["每個模型都裝備有：一面守護之盾，一柄哨戒之劍", "● 一個模型可以額外裝備一面禁衛旌旗"],
+    "options": [
+      { "id": "vexilla", "label": "一個模型額外裝備一面禁衛旌旗", "toggle": true }
+    ],
+    "image": "img/units/sentinel-guard.webp"
+  },
+  {
+    "id": "custodian-guard",
+    "name": "禁軍衛士兄弟會",
+    "en": "CUSTODIAN GUARD SODALITY",
+    "page": 25,
+    "section": "帝皇禁軍",
+    "group": "戰線",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "5", "LD": "5+", "OC": "3" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "不破鐵壁",
+        "text": ["滿足以下條件時，本單位的攻擊擁有【連擊 1：非載具/巨獸】", "■ 本單位位於任務點範圍內", "■ 上述攻擊的目標位於任務點範圍內"]
+      },
+      {
+        "name": "禁衛旌旗",
+        "text": ["■ 本單位獲得+1OC", "■ 本單位無視對 LD 的修正"]
+      }
+    ],
+    "ranged": [
+      { "name": "戍衛之矛", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" }
+    ],
+    "melee": [
+      { "name": "戍衛之矛", "range": "近戰", "a": "6", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "戰線", "帝國", "誓言衛士"],
+    "comp": "3個禁軍衛士模型",
+    "gear": ["每個模型都裝備有：一柄戍衛之矛", "● 一個模型可以額外裝備一面禁衛旌旗"],
+    "options": [
+      { "id": "vexilla", "label": "一個模型額外裝備一面禁衛旌旗", "toggle": true }
+    ],
+    "image": "img/units/custodian-guard.webp"
+  },
+  {
+    "id": "custodian-wardens",
+    "name": "禁軍守望者",
+    "en": "CUSTODIAN WARDEN",
+    "page": 26,
+    "section": "帝皇禁軍",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "6", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "活體要塞",
+        "text": ["以本單位為目標的攻擊擁有-1AP"]
+      },
+      {
+        "name": "禁衛旌旗",
+        "text": ["■ 本單位獲得+1OC", "■ 本單位無視對 LD 的修正"]
+      }
+    ],
+    "ranged": [
+      { "name": "堡主戰斧", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" },
+      { "name": "戍衛之矛", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" }
+    ],
+    "melee": [
+      { "name": "堡主戰斧", "range": "近戰", "a": "3", "skill": "2+", "s": "10", "ap": "-2", "d": "4", "kw": "" },
+      { "name": "戍衛之矛", "range": "近戰", "a": "6", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "帝國", "誓言衛士"],
+    "comp": "2~3個禁軍守望者模型",
+    "gear": ["每個模型都裝備有：一柄戍衛之矛", "● 本單位中的所有模型都可以將其裝備的戍衛之矛替換為一柄堡主戰斧", "● 一個模型可以額外裝備一面禁衛旌旗"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "perModel": true,
+        "choices": [
+          { "id": "guardian-spear", "label": "戍衛之矛" },
+          { "id": "axe", "label": "堡主戰斧" }
+        ]
+      },
+      { "id": "vexilla", "label": "一個模型額外裝備一面禁衛旌旗", "toggle": true }
+    ],
+    "image": "img/units/custodian-wardens.webp"
+  },
+  {
+    "id": "allarus-custodians",
+    "name": "阿拉魯斯親衛",
+    "en": "ALLARUS CUSTODIANS",
+    "page": 27,
+    "section": "帝皇禁軍",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "7", "T": "8", "SV": "2+", "W": "6", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "暴君殺手",
+        "text": ["本單位的近戰攻擊以一個比本單位 T 值更高的單位為目標時，上述攻擊的造傷骰結果+1"]
+      },
+      {
+        "name": "禁衛旌旗",
+        "text": ["■ 本單位獲得+1OC", "■ 本單位無視對 LD 的修正"]
+      }
+    ],
+    "ranged": [
+      { "name": "堡主戰斧", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" },
+      { "name": "戍衛之矛", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "突擊，速射2" },
+      { "name": "鐵騎榴彈發射器", "range": "18", "a": "3", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "突擊，爆炸1" }
+    ],
+    "melee": [
+      { "name": "堡主戰斧", "range": "近戰", "a": "3", "skill": "2+", "s": "10", "ap": "-2", "d": "4", "kw": "" },
+      { "name": "戍衛之矛", "range": "近戰", "a": "6", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "帝國", "終結者"],
+    "comp": "2~3個阿拉魯斯親衛模型",
+    "gear": ["每個模型都裝備有：一門鐵騎榴彈發射器，一柄戍衛之矛", "● 本單位中的所有模型都可以將其裝備的戍衛之矛替換為一柄堡主戰斧", "● 一個模型可以額外裝備一面禁衛旌旗"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "perModel": true,
+        "choices": [
+          { "id": "guardian-spear", "label": "戍衛之矛" },
+          { "id": "axe", "label": "堡主戰斧" }
+        ]
+      },
+      { "id": "vexilla", "label": "一個模型額外裝備一面禁衛旌旗", "toggle": true }
+    ],
+    "image": "img/units/allarus-custodians.webp"
+  },
+  {
+    "id": "aquilon-gauntlets",
+    "name": "天鷹終結者裝備曜日動力拳",
+    "en": "AQUILON TERMINATORS WITH SOLARITE POWER GAUNTLETS",
+    "page": 28,
+    "section": "帝皇禁軍",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "7", "T": "8", "SV": "2+", "W": "6", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "可怖之敵",
+        "text": ["本單位的近戰攻擊以一個非載具/巨獸單位為目標時，上述攻擊獲得+1AP"]
+      }
+    ],
+    "ranged": [
+      { "name": "並聯亞德斯克解離槍", "range": "12", "a": "2", "skill": "2+", "s": "5", "ap": "-2", "d": "3", "kw": "" }
+    ],
+    "melee": [
+      { "name": "曜日動力拳", "range": "近戰", "a": "5", "skill": "2+", "s": "10", "ap": "-2", "d": "3", "kw": "" }
+    ],
+    "base": "50mm圓底盤（APP為 40mm，待糾錯）",
+    "keywords": ["步兵", "帝國", "終結者"],
+    "comp": "3個天鷹終結者模型",
+    "gear": ["每個模型裝備有：一把並聯亞德斯克解離槍，一個曜日動力拳"],
+    "image": "img/units/aquilon-gauntlets.webp"
+  },
+  {
+    "id": "aquilon-talons",
+    "name": "天鷹終結者裝備曜日動力爪",
+    "en": "AQUILON TERMINATORS WITH SOLARITE POWER TALONS",
+    "page": 29,
+    "section": "帝皇禁軍",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "7", "T": "8", "SV": "2+", "W": "6", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "血腥收割",
+        "text": ["當以一個步兵單位為目標時，本單位的攻擊可以", "■ 重投結果為1 的命中骰", "■ 重投結果為1 的造傷骰"]
+      }
+    ],
+    "ranged": [
+      { "name": "煉獄火焰噴射器", "range": "12", "a": "3", "skill": "-", "s": "5", "ap": "-1", "d": "1", "kw": "爆炸2，洪流" },
+      { "name": "拉斯特魯姆風暴爆彈槍", "range": "24", "a": "3", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "速射3" }
+    ],
+    "melee": [
+      { "name": "曜日動力爪", "range": "近戰", "a": "6", "skill": "2+", "s": "6", "ap": "-2", "d": "1", "kw": "連擊2" }
+    ],
+    "base": "50mm橢圓底盤（APP為 40mm，待糾錯）",
+    "keywords": ["步兵", "帝國", "終結者"],
+    "comp": "3個天鷹終結者模型",
+    "gear": ["每個模型裝備有：一把拉斯特魯姆風暴爆彈槍，一個曜日動力爪", "● 本單位中的所有模型都可以將其裝備的拉斯特魯姆風暴爆彈槍替換為一把煉獄火焰噴射器"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "perModel": true,
+        "choices": [
+          { "id": "storm-bolter", "label": "拉斯特魯姆風暴爆彈槍" },
+          { "id": "flamer", "label": "煉獄火焰噴射器" }
+        ]
+      }
+    ],
+    "image": "img/units/aquilon-talons.webp"
+  },
+  {
+    "id": "venatari-kinetic",
+    "name": "禁軍鷹獵士裝備動能手槍",
+    "en": "VENATARI WITH KINETIC DESTROYERS",
+    "page": 30,
+    "section": "帝皇禁軍",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "12", "T": "7", "SV": "2+", "W": "5", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "一飛沖天",
+        "text": ["敵方近戰階段結束時，若本單位未接戰，你可以將此單位放入戰略預備隊中"]
+      },
+      {
+        "name": "中子鏈式手雷",
+        "text": ["任意階段開始時，你可以選擇一個位於本單位3寸內的敵方單位，投1D6，若結果為2+；", "■ 上述敵方單位受到D3點致命傷", "■ 若上述敵方單位為載具/巨獸單位，則受到2D3點致命傷"],
+        "limit": "每個單位每場戰鬥一次",
+        "once": "battle"
+      },
+      {
+        "name": "死從天降",
+        "text": ["你的射擊階段中，若本單位在本回合進行過入場移動，則本單位的遠程攻擊可以重投全部命中骰"]
+      }
+    ],
+    "ranged": [
+      { "name": "動能手槍", "range": "18", "a": "4", "skill": "2+", "s": "6", "ap": "-2", "d": "1", "kw": "突擊，近距離交戰，連擊1" }
+    ],
+    "melee": [
+      { "name": "塔蘇斯臂盾", "range": "近戰", "a": "5", "skill": "2+", "s": "6", "ap": "-2", "d": "1", "kw": "連擊1" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "爆炸物", "飛行", "帝國", "跳躍揹包"],
+    "comp": "3個禁軍鷹獵士模型",
+    "gear": ["每個模型裝備有：一把動能手槍，一面塔蘇斯臂盾"],
+    "image": "img/units/venatari-kinetic.webp"
+  },
+  {
+    "id": "venatari-lance",
+    "name": "禁軍鷹獵士裝備獵手長矛",
+    "en": "VENATARI WITH VERUTUM LANCE",
+    "page": 31,
+    "section": "帝皇禁軍",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "12", "T": "7", "SV": "2+", "W": "5", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "一飛沖天",
+        "text": ["敵方近戰階段結束時，若本單位未接戰，你可以將此單位放入戰略預備隊中"]
+      },
+      {
+        "name": "中子鏈式手雷",
+        "text": ["任意階段開始時，你可以選擇一個位於本單位3寸內的敵方單位，投1D6，若結果為2+；", "■ 上述敵方單位受到D3點致命傷", "■ 若上述敵方單位為載具/巨獸單位，則受到2D3點致命傷"],
+        "limit": "每個單位每場戰鬥一次",
+        "once": "battle"
+      },
+      {
+        "name": "迅捷突襲",
+        "text": ["你能夠以本單位為目標使用快速入場戰略技能，無論本階段該戰略技能是否已經被其他單位使用；", "■ 本次使用該戰略技能的CP消耗-1", "■ 本次使用該戰略技能不會影響其他單位使用此戰略技能"],
+        "limit": "全軍每階段一次"
+      }
+    ],
+    "ranged": [
+      { "name": "獵手長矛", "range": "18", "a": "1", "skill": "2+", "s": "10", "ap": "-2", "d": "3", "kw": "突擊" }
+    ],
+    "melee": [
+      { "name": "獵手長矛", "range": "近戰", "a": "5", "skill": "2+", "s": "7", "ap": "-2", "d": "2", "kw": "騎槍，精準" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "爆炸物", "飛行", "帝國", "跳躍揹包"],
+    "comp": "3個禁軍鷹獵士模型",
+    "gear": ["每個模型裝備有：一柄獵手長矛"],
+    "image": "img/units/venatari-lance.webp"
+  },
+  {
+    "id": "vertus-praetors",
+    "name": "晨鷹摩托隊",
+    "en": "VERTUS PRAETORS",
+    "page": 32,
+    "section": "帝皇禁軍",
+    "group": "騎乘",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "12", "T": "8", "SV": "2+", "W": "7", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "其疾如風",
+        "text": ["若本回閤中本單位進行過沖鋒移動，本單位的近戰攻擊獲得【連擊1】"]
+      }
+    ],
+    "ranged": [
+      { "name": "颶風爆彈槍", "range": "18", "a": "3", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "雙聯，速射3" },
+      { "name": "集束導彈", "range": "24", "a": "2", "skill": "2+", "s": "10", "ap": "-2", "d": "D3+2", "kw": "" }
+    ],
+    "melee": [
+      { "name": "攔截騎槍", "range": "近戰", "a": "6", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "騎槍" }
+    ],
+    "base": "75×42mm飛行橢圓底盤",
+    "keywords": ["騎乘", "飛行", "帝國"],
+    "comp": "2~3個晨鷹摩托隊模型",
+    "gear": ["一具集束導彈，一柄攔截騎槍", "● 本單位中的所有模型都可以將其裝備的集束導彈替換為一門颶風爆彈槍"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "perModel": true,
+        "choices": [
+          { "id": "missile", "label": "集束導彈" },
+          { "id": "bolter", "label": "颶風爆彈槍" }
+        ]
+      }
+    ],
+    "image": "img/units/vertus-praetors.webp"
+  },
+  {
+    "id": "gyrfalcon-jetbikes",
+    "name": "矛隼騎兵兄弟會",
+    "en": "GYRFALCON JEKBIKE SODALITY",
+    "page": 33,
+    "section": "帝皇禁軍",
+    "group": "騎乘",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "12", "T": "8", "SV": "2+", "W": "9", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "一擊斃命",
+        "text": ["若本回閤中本單位進行過沖鋒移動，本單位的近戰攻擊獲得+1AP"]
+      }
+    ],
+    "ranged": [
+      { "name": "亞德斯克解離炮", "range": "18", "a": "3", "skill": "2+", "s": "8", "ap": "-2", "d": "3", "kw": "" },
+      { "name": "阿拉克努斯齊射炮", "range": "24", "a": "8", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "毀滅傷害，連擊1" },
+      { "name": "拉斯特魯姆爆彈加農炮", "range": "36", "a": "3", "skill": "2+", "s": "6", "ap": "-2", "d": "2", "kw": "連擊1" },
+      { "name": "雙聯鴉式激光脈衝炮", "range": "18", "a": "1", "skill": "2+", "s": "10", "ap": "-3", "d": "D3+2", "kw": "雙聯" }
+    ],
+    "melee": [
+      { "name": "曜日騎槍", "range": "近戰", "a": "5", "skill": "2+", "s": "8", "ap": "-2", "d": "3", "kw": "騎槍" }
+    ],
+    "base": "90×52mm飛行橢圓底盤（APP為 75×42 mm，待糾錯）",
+    "keywords": ["騎乘", "飛行", "帝國"],
+    "comp": "2個矛隼騎兵模型",
+    "gear": ["一門拉斯特魯姆爆彈加農炮，一柄曜日騎槍", "本單位中的所有模型都可以將其裝備的拉斯特魯姆爆彈加農炮替換為：", "● 一門亞德斯克解離炮", "● 一門阿拉克努斯齊射炮", "● 一門雙聯鴉式激光脈衝炮"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "perModel": true,
+        "choices": [
+          { "id": "bolt-cannon", "label": "拉斯特魯姆爆彈加農炮" },
+          { "id": "adrathic", "label": "亞德斯克解離炮" },
+          { "id": "salvo", "label": "阿拉克努斯齊射炮" },
+          { "id": "las-pulsar", "label": "雙聯鴉式激光脈衝炮" }
+        ]
+      }
+    ],
+    "image": "img/units/gyrfalcon-jetbikes.webp"
+  },
+  {
+    "id": "achillus-dreadnought",
+    "name": "阿喀琉斯蔑視者無畏",
+    "en": "CONTEMPTOR-ACHILLUS DREADNOUGHT",
+    "page": 34,
+    "section": "帝皇禁軍",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "9", "T": "10", "SV": "2+", "W": "12", "LD": "5+", "OC": "3" },
+    "invuln": "5+",
+    "core": ["損傷4", "致命破滅 D3"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "不朽古賢",
+        "text": ["以本單位為目標的攻擊的 S 大於本單位的 T 時，該攻擊的造傷骰結果-1"]
+      }
+    ],
+    "ranged": [
+      { "name": "亞德斯克解離槍", "range": "12", "a": "2", "skill": "2+", "s": "5", "ap": "-2", "d": "3", "kw": "" },
+      { "name": "拉斯特魯姆爆彈槍", "range": "24", "a": "3", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "速射 3" },
+      { "name": "雙聯煉獄焚焰炮", "range": "12", "a": "3", "skill": "-", "s": "6", "ap": "-1", "d": "1", "kw": "爆炸2，洪流，雙聯" },
+      { "name": "恐懼之矛", "range": "18", "a": "2", "skill": "2+", "s": "10", "ap": "-3", "d": "D3+2", "kw": "" }
+    ],
+    "melee": [
+      { "name": "恐懼之矛", "range": "近戰", "a": "5", "skill": "2+", "s": "12", "ap": "-3", "d": "D3+3", "kw": "騎槍" }
+    ],
+    "base": "60mm圓底盤",
+    "keywords": ["載具", "無畏", "帝國", "機甲"],
+    "comp": "1個阿喀琉斯蔑視者無畏模型",
+    "gear": ["本模型裝備有：兩把拉斯特魯姆爆彈槍，一柄恐懼之矛", "本模型都可以將其裝備的兩把拉斯特魯姆爆彈槍替換為：", "● 兩把亞德斯克解離槍", "● 兩把雙聯煉獄焚焰炮"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "bolters", "label": "兩把拉斯特魯姆爆彈槍" },
+          { "id": "adrathic", "label": "兩把亞德斯克解離槍" },
+          { "id": "incinerators", "label": "兩把雙聯煉獄焚焰炮" }
+        ]
+      }
+    ],
+    "image": "img/units/achillus-dreadnought.webp"
+  },
+  {
+    "id": "galatus-dreadnought",
+    "name": "加拉圖斯蔑視者無畏",
+    "en": "CONTEMPTOR-GALATUS DREADNOUGHT",
+    "page": 35,
+    "section": "帝皇禁軍",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "9", "T": "10", "SV": "2+", "W": "12", "LD": "5+", "OC": "3" },
+    "invuln": "4+",
+    "core": ["損傷4", "致命破滅 D3"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "不朽古賢",
+        "text": ["以本單位為目標的攻擊的S 大於本單位的T 時，該攻擊的造傷骰結果-1"]
+      }
+    ],
+    "ranged": [
+      { "name": "加拉圖斯戰刃", "range": "12", "a": "4", "skill": "-", "s": "6", "ap": "-1", "d": "2", "kw": "爆炸2，洪流，雙聯" }
+    ],
+    "melee": [
+      { "name": "加拉圖斯戰刃", "range": "近戰", "a": "8", "skill": "2+", "s": "10", "ap": "-2", "d": "3", "kw": "劈砍1，連擊1：非載具/巨獸" }
+    ],
+    "base": "60mm圓底盤",
+    "keywords": ["載具", "無畏", "帝國", "機甲"],
+    "comp": "1個加拉圖斯蔑視者無畏模型",
+    "gear": ["本模型裝備有：一柄加拉圖斯戰刃"],
+    "image": "img/units/galatus-dreadnought.webp"
+  },
+  {
+    "id": "telemon-dreadnought",
+    "name": "特拉蒙重型無畏",
+    "en": "TELEMON HEAVY DREADNOUGHT",
+    "page": 36,
+    "section": "帝皇禁軍",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "10", "T": "11", "SV": "2+", "W": "14", "LD": "5+", "OC": "4" },
+    "invuln": "4+",
+    "core": ["損傷 5", "致命破滅 D3"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "永恆守衛",
+        "text": ["以本模型為目標的遠程攻擊獲得-1D"]
+      }
+    ],
+    "ranged": [
+      { "name": "亞德拉斯克解離炮", "range": "24", "a": "4", "skill": "2+", "s": "10", "ap": "-2", "d": "4", "kw": "" },
+      { "name": "阿基努斯風暴加農炮", "range": "24", "a": "12", "skill": "2+", "s": "6", "ap": "-1", "d": "1", "kw": "毀滅傷害，連擊1" },
+      { "name": "伊利亞圖斯加速炮", "range": "48", "a": "3", "skill": "2+", "s": "10", "ap": "-1", "d": "3", "kw": "速射3" },
+      { "name": "斯皮克魯斯爆彈巢", "range": "36", "a": "6", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "爆炸2" },
+      { "name": "並聯中子素聯級投射器", "range": "12", "a": "3", "skill": "-", "s": "7", "ap": "-2", "d": "1", "kw": "爆炸1，洪流，雙聯" }
+    ],
+    "melee": [
+      { "name": "特拉蒙金拳", "range": "近戰", "a": "5", "skill": "2+", "s": "14", "ap": "-3", "d": "4", "kw": "" },
+      { "name": "一雙特拉蒙金拳", "range": "近戰", "a": "7", "skill": "2+", "s": "14", "ap": "-3", "d": "4", "kw": "雙聯" }
+    ],
+    "base": "100mm圓底盤",
+    "keywords": ["載具", "無畏", "帝國", "機甲"],
+    "comp": "1個特拉蒙重型無畏模型",
+    "gear": [
+      "本模型裝備有：一雙特拉蒙金拳；一具斯皮克魯斯爆彈巢；兩具並聯中子素聯級投射器",
+      "本模型的一雙特拉蒙金拳和兩具並聯中子素聯級投射器可以替換為以下選項之一：",
+      "● 一門亞德拉斯克解離炮、一個特拉蒙金拳和一具並聯中子素聯級投射器",
+      "● 一門阿基努斯風暴加農炮、一個特拉蒙金拳和一具並聯中子素聯級投射器",
+      "● 一門伊利亞圖斯加速炮、一個特拉蒙金拳和一具並聯中子素聯級投射器"
+    ],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "fists", "label": "一雙特拉蒙金拳、兩具並聯中子素聯級投射器" },
+          { "id": "adrathic", "label": "亞德拉斯克解離炮、特拉蒙金拳、並聯中子素聯級投射器" },
+          { "id": "storm-cannon", "label": "阿基努斯風暴加農炮、特拉蒙金拳、並聯中子素聯級投射器" },
+          { "id": "accelerator", "label": "伊利亞圖斯加速炮、特拉蒙金拳、並聯中子素聯級投射器" }
+        ]
+      }
+    ],
+    "image": "img/units/telemon-dreadnought.webp"
+  },
+  {
+    "id": "caladius-annihilator",
+    "name": "卡拉狄烏斯殲滅者型反重力坦克",
+    "en": "CALADIUS ANNIHILATOR GRAV-TANK",
+    "page": 37,
+    "section": "帝皇禁軍",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "10", "T": "11", "SV": "2+", "W": "14", "LD": "5+", "OC": "4" },
+    "invuln": "5+",
+    "core": ["損傷5", "致命破滅 D3", "深入打擊"],
+    "factionAbilities": ["帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "先進火控系統",
+        "text": ["本單位以巨獸/載具單位為目標的攻擊能夠重投一顆命中骰、一顆造傷骰和一顆傷害骰"]
+      }
+    ],
+    "ranged": [
+      { "name": "阿拉克努斯爆炎重炮", "range": "48", "a": "4", "skill": "2+", "s": "12", "ap": "-3", "d": "D6+2", "kw": "致命一擊：巨獸/載具" },
+      { "name": "雙聯拉斯特魯姆爆彈炮", "range": "36", "a": "3", "skill": "2+", "s": "6", "ap": "-2", "d": "2", "kw": "連擊1，雙聯" },
+      { "name": "並聯中子素聯級投射器", "range": "12", "a": "3", "skill": "-", "s": "7", "ap": "-2", "d": "1", "kw": "爆炸1，洪流，雙聯" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "4", "skill": "4+", "s": "6", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "170×109mm橢圓底盤",
+    "keywords": ["載具", "卡拉狄烏斯坦克", "飛行", "外殼", "反重力突擊", "帝國"],
+    "comp": "1個卡拉狄烏斯殲滅者型反重力坦克模型",
+    "gear": ["本模型裝備有：一具裝甲車體；一門阿拉克努斯爆炎重炮；一門雙聯拉斯特魯姆爆彈炮", "本模型可以將其裝備的雙聯拉斯特魯姆爆彈槍替換為一具並聯中子素聯級投射器"],
+    "options": [
+      {
+        "id": "secondary",
+        "label": "副武器",
+        "choices": [
+          { "id": "bolt-cannon", "label": "雙聯拉斯特魯姆爆彈炮" },
+          { "id": "projector", "label": "並聯中子素聯級投射器" }
+        ]
+      }
+    ],
+    "image": "img/units/caladius-annihilator.webp"
+  },
+  {
+    "id": "caladius-grav-tank",
+    "name": "卡拉狄烏斯反重力坦克",
+    "en": "CALADIUS GRAV-TANK",
+    "page": 38,
+    "section": "帝皇禁軍",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "10", "T": "11", "SV": "2+", "W": "14", "LD": "5+", "OC": "4" },
+    "invuln": "5+",
+    "core": ["損傷5", "致命破滅 D3", "深入打擊"],
+    "factionAbilities": ["帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "先進火控系統",
+        "text": ["本單位以非巨獸/載具單位為目標的攻擊獲得+1AP"]
+      }
+    ],
+    "ranged": [
+      { "name": "伊利亞圖斯加速炮", "range": "48", "a": "4", "skill": "2+", "s": "10", "ap": "-1", "d": "3", "kw": "速射4，連擊1：非巨獸/載具" },
+      { "name": "雙聯拉斯特魯姆爆彈炮", "range": "36", "a": "3", "skill": "2+", "s": "6", "ap": "-2", "d": "2", "kw": "連擊1，雙聯" },
+      { "name": "並聯中子素聯級投射器", "range": "12", "a": "3", "skill": "-", "s": "7", "ap": "-2", "d": "1", "kw": "爆炸1，洪流，雙聯" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "4", "skill": "4+", "s": "6", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "170×109mm橢圓底盤",
+    "keywords": ["載具", "卡拉狄烏斯坦克", "飛行", "外殼", "反重力突擊", "帝國"],
+    "comp": "1個卡拉狄烏斯反重力坦克模型",
+    "gear": ["本模型裝備有：一具裝甲車體；一門伊利亞圖斯加速炮；一門雙聯拉斯特魯姆爆彈炮", "本模型可以將其裝備的雙聯拉斯特魯姆爆彈槍替換為一具並聯中子素聯級投射器"],
+    "options": [
+      {
+        "id": "secondary",
+        "label": "副武器",
+        "choices": [
+          { "id": "bolt-cannon", "label": "雙聯拉斯特魯姆爆彈炮" },
+          { "id": "projector", "label": "並聯中子素聯級投射器" }
+        ]
+      }
+    ],
+    "image": "img/units/caladius-grav-tank.webp"
+  },
+  {
+    "id": "pallas-grav-attack",
+    "name": "帕拉斯反重力突擊車",
+    "en": "PALLAS GRAV-ATTACK",
+    "page": 39,
+    "section": "帝皇禁軍",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "12", "T": "9", "SV": "2+", "W": "10", "LD": "5+", "OC": "2" },
+    "invuln": "5+",
+    "core": ["致命破滅 1", "深入打擊"],
+    "factionAbilities": ["帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "機動獵手",
+        "text": ["你的射擊階段中，本單位完成射擊後，你可以使用此能力；", "　該單位可以進行一次至多D6寸的常規移動", "　直到本回合結束，本單位無法宣佈衝鋒"]
+      }
+    ],
+    "ranged": [
+      { "name": "雙聯阿拉克努斯爆炎加農炮", "range": "48", "a": "2", "skill": "2+", "s": "10", "ap": "-3", "d": "D3+2", "kw": "雙聯" },
+      { "name": "雙聯伊利亞圖斯加速炮", "range": "48", "a": "2", "skill": "2+", "s": "10", "ap": "-1", "d": "3", "kw": "速射2，雙聯" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "3", "skill": "4+", "s": "6", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "105×70mm橢圓底盤",
+    "keywords": ["載具", "飛行", "外殼", "反重力突擊", "帝國"],
+    "comp": "1個帕拉斯反重力突擊車模型",
+    "gear": ["本模型裝備有：一具裝甲車體；一門雙聯阿拉克努斯爆炎加農炮；", "本模型可以將其裝備的雙聯阿拉克努斯爆炎加農炮替換為一門雙聯伊利亞圖斯加速炮"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "blaze-cannon", "label": "雙聯阿拉克努斯爆炎加農炮" },
+          { "id": "accelerator", "label": "雙聯伊利亞圖斯加速炮" }
+        ]
+      }
+    ],
+    "image": "img/units/pallas-grav-attack.webp"
+  },
+  {
+    "id": "coronus-grav-carrier",
+    "name": "克洛諾斯反重力運兵車",
+    "en": "CORONUS GRAV-CARRIER",
+    "page": 40,
+    "section": "帝皇禁軍",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "12", "T": "12", "SV": "2+", "W": "16", "LD": "5+", "OC": "5" },
+    "invuln": "5+",
+    "core": ["損傷 6", "致命破滅 D3", "深入打擊"],
+    "factionAbilities": ["帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "斥力懸浮技術",
+        "text": ["敵方射擊階段中，一個敵方單位完成射擊後，如果本單位因上述攻擊而失去耐傷（W值），且未接戰，該單位可以進行一次最多D6寸的常規移動"],
+        "limit": "每個單位每個階段一次"
+      },
+      {
+        "name": "突擊載具",
+        "text": ["你的移動階段中，本模型結束一次加速移動後，搭載本模型的單位可以進行一次突擊脫離移動"]
+      },
+      {
+        "name": "運輸載具",
+        "text": ["本模型可以搭載8個帝皇禁軍步兵模型，無法搭載跳躍揹包模型"]
+      }
+    ],
+    "ranged": [
+      { "name": "雙聯阿拉克努斯爆炎加農炮", "range": "48", "a": "2", "skill": "2+", "s": "10", "ap": "-3", "d": "D3+2", "kw": "雙聯" },
+      { "name": "雙聯拉斯特魯姆爆彈炮", "range": "36", "a": "3", "skill": "2+", "s": "6", "ap": "-2", "d": "2", "kw": "連擊1，雙聯" },
+      { "name": "並聯中子素聯級投射器", "range": "12", "a": "3", "skill": "-", "s": "7", "ap": "-2", "d": "1", "kw": "爆炸1，洪流，雙聯" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "6", "skill": "4+", "s": "8", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "170×109mm橢圓底盤",
+    "keywords": ["載具", "飛行", "外殼", "反重力突擊", "帝國", "運輸載具"],
+    "comp": "1個克洛諾斯反重力運兵車模型",
+    "gear": ["本模型裝備有：一具裝甲車體；一門雙聯阿拉克努斯爆炎加農炮；一門雙聯拉斯特魯姆爆彈炮", "本模型可以將其裝備的雙聯拉斯特魯姆爆彈炮替換為一具並聯中子素聯級投射器"],
+    "options": [
+      {
+        "id": "secondary",
+        "label": "副武器",
+        "choices": [
+          { "id": "bolt-cannon", "label": "雙聯拉斯特魯姆爆彈炮" },
+          { "id": "projector", "label": "並聯中子素聯級投射器" }
+        ]
+      }
+    ],
+    "image": "img/units/coronus-grav-carrier.webp"
+  },
+  {
+    "id": "knight-centura",
+    "name": "百騎長",
+    "en": "TRAJAAN VALORIS",
+    "page": 41,
+    "section": "寂靜修女",
+    "group": "人物",
+    "faction": "寂靜修女",
+    "stats": { "M": "7", "T": "3", "SV": "3+", "W": "4", "LD": "6+", "OC": "1" },
+    "invuln": "5+",
+    "core": ["斥候 7", "輔助"],
+    "factionAbilities": ["深淵之女"],
+    "abilities": [
+      {
+        "name": "獵手本能",
+        "text": ["■ 本單位的M值+2", "■ 本單位可以重投加速骰和衝鋒骰"]
+      },
+      {
+        "name": "逼入絕境",
+        "text": ["一個與本單位接戰的敵方單位（載具/巨獸單位除外）進行撤退時，該敵方單位必須使用絕望潰逃模式，若上述敵方單位處於戰鬥震懾狀態，則本次潰逃測試結果-1"]
+      }
+    ],
+    "ranged": [
+      { "name": "精工爆彈槍", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "反靈能者 4+，突擊，速射1" },
+      { "name": "精工噴火器", "range": "12", "a": "2", "skill": "-", "s": "4", "ap": "-1", "d": "1", "kw": "反靈能者 4+，突擊，爆炸2，洪流" }
+    ],
+    "melee": [
+      { "name": "處決者巨劍", "range": "近戰", "a": "4", "skill": "2+", "s": "5", "ap": "-2", "d": "2", "kw": "反靈能者5+，劈砍1，毀滅傷害：靈能者" },
+      { "name": "槍托", "range": "近戰", "a": "3", "skill": "2+", "s": "3", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "32mm圓底盤",
+    "keywords": ["步兵", "寂靜修女", "人物", "帝國"],
+    "comp": "一個百騎長模型",
+    "gear": ["本模型裝備有：一把處決者巨劍", "本模型可以將其裝備的處決者巨劍替換為一把精工爆彈槍和槍托", "本模型可以將其裝備的處決者巨劍替換為一把精工噴火器和槍托"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "greatblade", "label": "處決者巨劍" },
+          { "id": "boltgun", "label": "精工爆彈槍和槍托" },
+          { "id": "flamer", "label": "精工噴火器和槍托" }
+        ]
+      }
+    ],
+    "leads": ["prosecutors", "vigilators", "witchseekers"],
+    "note": ["原文英文名印作“TRAJAAN VALORIS”，與圖拉真數據卡相同，應為誤植（Knight-Centura），照錄。", "技能欄的核心技能印作“斥候 7，輔助”，軍表構成欄則印作“核心技能：領袖”，兩者照錄。"],
+    "image": "img/units/knight-centura.webp"
+  },
+  {
+    "id": "prosecutors",
+    "name": "控訴者小隊",
+    "en": "PROSECUTOR SQUAD",
+    "page": 42,
+    "section": "寂靜修女",
+    "group": "其他",
+    "faction": "寂靜修女",
+    "stats": { "M": "7", "T": "3", "SV": "3+", "W": "1", "LD": "6+", "OC": "2" },
+    "invuln": null,
+    "core": [],
+    "factionAbilities": ["深淵之女"],
+    "abilities": [
+      {
+        "name": "純淨處決",
+        "text": ["射擊階段，你可以選擇一個位於該單位18寸內、且可見的敵方單位。該敵方單位處於被偵測狀態；", "當一個單位處於被偵測狀態時，該單位的偵測範圍+3寸"]
+      }
+    ],
+    "ranged": [
+      { "name": "爆彈槍", "range": "24", "a": "2", "skill": "3+", "s": "5", "ap": "-1", "d": "1", "kw": "反靈能者 4+，突擊，速射1" }
+    ],
+    "melee": [
+      { "name": "槍托", "range": "近戰", "a": "2", "skill": "3+", "s": "3", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "32mm圓底盤",
+    "keywords": ["步兵", "寂靜修女", "帝國"],
+    "comp": "4/5/9/10個控訴者模型",
+    "gear": ["每個模型裝備有：一把爆彈槍，槍托"],
+    "image": "img/units/prosecutors.webp"
+  },
+  {
+    "id": "vigilators",
+    "name": "戒衛者小隊",
+    "en": "VIGILATORS SQUAD",
+    "page": 43,
+    "section": "寂靜修女",
+    "group": "其他",
+    "faction": "寂靜修女",
+    "stats": { "M": "7", "T": "3", "SV": "3+", "W": "1", "LD": "6+", "OC": "1" },
+    "invuln": null,
+    "core": [],
+    "factionAbilities": ["深淵之女"],
+    "abilities": [
+      {
+        "name": "靈巧格擋",
+        "text": ["以本單位為目標的近戰攻擊的命中骰結果-1"]
+      }
+    ],
+    "ranged": [],
+    "melee": [
+      { "name": "處決者巨劍", "range": "近戰", "a": "3", "skill": "3+", "s": "5", "ap": "-2", "d": "2", "kw": "反靈能者5+，毀滅傷害：靈能者" }
+    ],
+    "base": "32mm圓底盤",
+    "keywords": ["步兵", "寂靜修女", "帝國"],
+    "comp": "4/5/9/10個戒衛者模型",
+    "gear": ["每個模型裝備有：一柄處決者巨劍"],
+    "image": "img/units/vigilators.webp"
+  },
+  {
+    "id": "witchseekers",
+    "name": "尋巫者小隊",
+    "en": "WITCHSEEKER SQUAD",
+    "page": 44,
+    "section": "寂靜修女",
+    "group": "其他",
+    "faction": "寂靜修女",
+    "stats": { "M": "7", "T": "3", "SV": "3+", "W": "1", "LD": "6+", "OC": "1" },
+    "invuln": null,
+    "core": [],
+    "factionAbilities": ["深淵之女"],
+    "abilities": [
+      {
+        "name": "聖化烈焰",
+        "text": ["你的射擊階段中，本單位完成射擊後，你可以選擇一個被上述攻擊命中的敵方單位；該敵方單位進行一次戰鬥震懾測試；若該敵方單位是靈能者單位，則本次測試結果 -1"]
+      }
+    ],
+    "ranged": [
+      { "name": "噴火器", "range": "24", "a": "3", "skill": "-", "s": "4", "ap": "-1", "d": "1", "kw": "反靈能者 4+，突擊，爆炸1，洪流" }
+    ],
+    "melee": [
+      { "name": "槍托", "range": "近戰", "a": "2", "skill": "3+", "s": "3", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "32mm圓底盤",
+    "keywords": ["步兵", "寂靜修女", "帝國"],
+    "comp": "4/5/9/10個控訴者模型",
+    "gear": ["每個模型裝備有：一把噴火器，槍托"],
+    "note": ["原文的單位構成印作“控訴者模型”，應為尋巫者，照錄。", "本單位在領袖列表與寂靜守望分隊中被稱作“獵巫者小隊”。", "噴火器的攻擊範圍原文印作 24，照錄。"],
+    "image": "img/units/witchseekers.webp"
+  },
+  {
+    "id": "anathema-rhino",
+    "name": "寂靜修女犀牛運兵車",
+    "en": "ANATHEMA PSYKANA RHINO",
+    "page": 45,
+    "section": "寂靜修女",
+    "group": "載具",
+    "faction": "寂靜修女",
+    "stats": { "M": "12", "T": "9", "SV": "3+", "W": "10", "LD": "6+", "OC": "2" },
+    "invuln": null,
+    "core": ["致命破滅 D3", "開火口 2"],
+    "factionAbilities": ["深淵之女"],
+    "abilities": [
+      {
+        "name": "突擊載具",
+        "text": ["你的移動階段中，本模型結束一次加速移動後，搭載本模型的單位可以進行一次突擊脫離移動"]
+      },
+      {
+        "name": "運輸載具",
+        "text": ["本模型可以搭載12個寂靜修女步兵模型"]
+      }
+    ],
+    "ranged": [
+      { "name": "獵殺飛彈", "range": "48", "a": "1", "skill": "2+", "s": "14", "ap": "-3", "d": "D3+3", "kw": "一次性" },
+      { "name": "風暴爆彈槍", "range": "24", "a": "2", "skill": "3+", "s": "5", "ap": "-1", "d": "1", "kw": "速射2" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "3", "skill": "4+", "s": "6", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "外殼",
+    "keywords": ["載具", "寂靜修女", "專屬運輸", "外殼", "帝國", "運輸載具"],
+    "comp": "1個寂靜修女犀牛運兵車模型",
+    "gear": ["本模型裝備有：一具裝甲車體；一把風暴爆彈槍", "本模型可以裝備一發獵殺飛彈"],
+    "options": [
+      { "id": "missile", "label": "裝備一發獵殺飛彈", "toggle": true }
+    ],
+    "image": "img/units/anathema-rhino.webp"
+  },
+  {
+    "id": "ares-gunship",
+    "name": "阿瑞斯炮艇",
+    "en": "ARES GUNSHIP",
+    "page": 46,
+    "section": "帝國裝甲",
+    "group": "飛行器",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "-", "T": "12", "SV": "2+", "W": "22", "LD": "6+", "OC": "-" },
+    "invuln": "5+",
+    "core": ["損傷 7", "致命破滅 D6"],
+    "factionAbilities": ["帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "煉獄燃燒彈",
+        "text": ["敵方近戰階段結束時，選擇一個位於本單位 24 寸內的可見敵方單位（獨行特工和飛行器單位除外）", "　直到你的下回合結束前，以上述敵方單位進行的遠程攻擊獲得【無視掩體】", "　為該敵方單位中的每個模型投 1D6，若結果為 6，上述敵方單位受到 1點致命傷（最多6 點）"]
+      }
+    ],
+    "ranged": [
+      { "name": "阿拉克努斯爆炎巨炮", "range": "48", "a": "3", "skill": "2+", "s": "18", "ap": "-3", "d": "D6+6", "kw": "" },
+      { "name": "阿拉克努斯爆炎重炮", "range": "36", "a": "4", "skill": "2+", "s": "12", "ap": "-3", "d": "D3+3", "kw": "" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "9", "skill": "4+", "s": "9", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "160mm圓底盤",
+    "keywords": ["載具", "飛行", "飛行器", "帝國"],
+    "comp": "1個阿瑞斯炮艇模型",
+    "gear": ["本模型裝備有：一具裝甲車體；兩門阿拉克努斯爆炎重炮；一門阿拉克努斯爆炎巨炮"],
+    "image": "img/units/ares-gunship.webp"
+  },
+  {
+    "id": "orion-dropship",
+    "name": "獵戶座突擊空降艇",
+    "en": "ORION ASSULT DROPSHIP",
+    "page": 47,
+    "section": "帝國裝甲",
+    "group": "飛行器",
+    "faction": "帝皇禁軍",
+    "stats": { "M": "14", "T": "12", "SV": "2+", "W": "22", "LD": "6+", "OC": "0" },
+    "invuln": "5+",
+    "core": ["損傷 7", "致命破滅 D6", "懸停"],
+    "factionAbilities": ["帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "突擊空降艇",
+        "text": ["你的移動階段中，一個友方帝皇禁軍單位被選中進行一次戰術脫離移動後，若上述單位被選中進行一次加速移動，本次加速移動不會阻止該單位宣佈衝鋒"]
+      },
+      {
+        "name": "運輸載具",
+        "text": ["本模型可以搭載 12 個帝皇禁軍步兵模型或一個無畏模型；搭載一個無畏模型時，本單位還可以搭載 6 個帝皇禁軍模型"]
+      }
+    ],
+    "ranged": [
+      { "name": "阿拉克努斯爆炎重炮", "range": "48", "a": "4", "skill": "2+", "s": "12", "ap": "-3", "d": "D3+3", "kw": "" },
+      { "name": "雙聯拉斯特魯姆爆彈炮", "range": "36", "a": "3", "skill": "2+", "s": "6", "ap": "-2", "d": "2", "kw": "連擊1，雙聯" },
+      { "name": "斯皮克魯斯重型爆彈巢", "range": "36", "a": "8", "skill": "2+", "s": "7", "ap": "-1", "d": "2", "kw": "爆炸 2" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "4", "skill": "4+", "s": "6", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "160mm圓底盤",
+    "keywords": ["載具", "飛行", "運輸載具", "帝國"],
+    "comp": "1個獵戶座突擊空降艇模型",
+    "gear": ["本模型裝備有：一具裝甲車體；兩門阿拉克努斯爆炎重炮；兩門斯皮克魯斯重型爆彈巢；兩門雙聯拉斯特魯姆爆彈炮"],
+    "image": "img/units/orion-dropship.webp"
+  },
+  {
+    "id": "aleya",
+    "name": "阿萊雅",
+    "en": "ALEYA",
+    "page": 48,
+    "section": "傳奇單位",
+    "group": "人物",
+    "faction": "寂靜修女",
+    "legends": true,
+    "stats": { "M": "7", "T": "3", "SV": "3+", "W": "4", "LD": "6+", "OC": "1" },
+    "invuln": "5+",
+    "core": ["不覺疼痛5+", "領袖", "斥候 6"],
+    "factionAbilities": ["深淵之女"],
+    "abilities": [
+      {
+        "name": "戰術直覺",
+        "text": ["本單位擁有先攻"]
+      },
+      {
+        "name": "堅韌靈魂",
+        "text": ["本單位低於起始兵力時，其攻擊的命中骰結果+1；", "本單位低於半數兵力時，其攻擊的造傷骰結果+1"]
+      }
+    ],
+    "ranged": [],
+    "melee": [
+      { "name": "安眠", "range": "近戰", "a": "4", "skill": "2+", "s": "6", "ap": "-3", "d": "3", "kw": "反靈能者5+，毀滅傷害" }
+    ],
+    "base": "32mm圓底盤",
+    "keywords": ["步兵", "寂靜修女", "人物", "史詩英雄", "帝國"],
+    "comp": "1個阿萊雅模型",
+    "gear": ["本模型裝備有：一柄安眠"],
+    "leads": ["prosecutors", "vigilators", "witchseekers"],
+    "image": "img/units/aleya.webp"
+  },
+  {
+    "id": "valerian",
+    "name": "瓦雷里安",
+    "en": "VALERIAN",
+    "page": 49,
+    "section": "傳奇單位",
+    "group": "人物",
+    "faction": "帝皇禁軍",
+    "legends": true,
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "8", "LD": "5+", "OC": "2" },
+    "invuln": "4+",
+    "core": ["深入打擊", "不覺疼痛 6+", "領袖"],
+    "factionAbilities": ["御林武藝", "天鷹指揮官", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "黃金桂冠",
+        "text": ["以本單位為目標的攻擊獲得AP-1"]
+      },
+      {
+        "name": "獅門英傑",
+        "text": ["每個單位每場戰鬥一次，本模型可以將一個命中骰、造傷骰或豁免骰的結果改為未修正的 6"],
+        "once": "battle"
+      }
+    ],
+    "ranged": [
+      { "name": "真知之矛", "range": "24", "a": "3", "skill": "2+", "s": "6", "ap": "-1", "d": "2", "kw": "突擊，速射2" }
+    ],
+    "melee": [
+      { "name": "真知之矛", "range": "近戰", "a": "7", "skill": "2+", "s": "8", "ap": "-3", "d": "3", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "人物", "史詩英雄", "盾衛連長", "帝國"],
+    "comp": "1個圖拉真·瓦洛里斯模型",
+    "gear": ["本模型裝備有：真知之矛"],
+    "leads": ["sentinel-guard", "custodian-guard", "custodian-wardens"],
+    "note": ["原文的單位構成印作“1個圖拉真·瓦洛里斯模型”，應為瓦雷里安，照錄。", "其他傳奇數據卡將本模型稱作“瓦雷利安”。"],
+    "image": "img/units/valerian.webp"
+  },
+  {
+    "id": "custodian-guard-pyrithite",
+    "name": "禁軍衛士兄弟會裝備煉獄之矛",
+    "en": "CUSTODIAN GUARD SODALITY WITH PYRITHITE SPEARS",
+    "page": 50,
+    "section": "傳奇單位",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "legends": true,
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "5", "LD": "5+", "OC": "3" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "屠滅眾敵",
+        "text": ["每個單位每場戰鬥一次，本單位的遠程攻擊擁有【致命一擊】和【無視掩體】"],
+        "once": "battle"
+      }
+    ],
+    "ranged": [
+      { "name": "煉獄之矛", "range": "12", "a": "1", "skill": "2+", "s": "10", "ap": "-3", "d": "D3+2", "kw": "熱熔 2" }
+    ],
+    "melee": [
+      { "name": "煉獄之矛", "range": "近戰", "a": "6", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "帝國", "誓言衛士"],
+    "comp": "3個禁軍衛士模型",
+    "gear": ["每個模型都裝備有：一柄煉獄之矛"],
+    "ledBy": ["trajann-valoris", "valerian", "shield-captain"],
+    "image": "img/units/custodian-guard-pyrithite.webp"
+  },
+  {
+    "id": "custodian-guard-adrasite",
+    "name": "禁軍衛士兄弟會裝備裂解戰矛",
+    "en": "CUSTODIAN GUARD SODALITY WITH ADRASITE SPEARS",
+    "page": 51,
+    "section": "傳奇單位",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "legends": true,
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "5", "LD": "5+", "OC": "3" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "時刻警惕",
+        "text": ["本單位的攻擊能夠重投結果為 1 的造傷骰；", "若本單位位於任務點範圍內，本單位重投造傷骰"]
+      }
+    ],
+    "ranged": [
+      { "name": "裂解戰矛", "range": "18", "a": "2", "skill": "2+", "s": "8", "ap": "-2", "d": "3", "kw": "" }
+    ],
+    "melee": [
+      { "name": "裂解戰矛", "range": "近戰", "a": "6", "skill": "2+", "s": "8", "ap": "-2", "d": "2", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "帝國", "誓言衛士"],
+    "comp": "3個禁軍衛士模型",
+    "gear": ["每個模型都裝備有：一柄裂解戰矛"],
+    "ledBy": ["trajann-valoris", "valerian", "shield-captain"],
+    "image": "img/units/custodian-guard-adrasite.webp"
+  },
+  {
+    "id": "sagittarum",
+    "name": "禁軍射手座兄弟會",
+    "en": "CUSTODIAN SAGITTARUM SODALITY",
+    "page": 52,
+    "section": "傳奇單位",
+    "group": "其他",
+    "faction": "帝皇禁軍",
+    "legends": true,
+    "stats": { "M": "8", "T": "7", "SV": "2+", "W": "5", "LD": "5+", "OC": "3" },
+    "invuln": "4+",
+    "core": ["深入打擊"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "分解射線",
+        "text": ["每個單位每場戰鬥一次，你的射擊階段中，你可以使用本能力；本單的遠程攻擊獲得【毀滅傷害】"],
+        "once": "battle"
+      },
+      {
+        "name": "集中火力",
+        "text": ["你的射擊階段中，本單位完成射擊後，你可以選擇一個被上述攻擊命中的敵方非巨獸/載具單位，知道你的下個回合開始前，上述敵方單位被壓制；被壓制單位的攻擊的命中骰結果-1"]
+      }
+    ],
+    "ranged": [
+      { "name": "亞德拉斯托斯型爆彈槍", "range": "36", "a": "3", "skill": "2+", "s": "7", "ap": "-2", "d": "2", "kw": "連擊 1" }
+    ],
+    "melee": [
+      { "name": "慈悲之刃", "range": "近戰", "a": "4", "skill": "2+", "s": "6", "ap": "-2", "d": "1", "kw": "" }
+    ],
+    "base": "40mm圓底盤",
+    "keywords": ["步兵", "帝國", "誓言衛士"],
+    "comp": "3個射手座禁軍模型",
+    "gear": ["每個模型都裝備有：一把亞德拉斯托斯型爆彈槍；一柄慈悲之刃"],
+    "ledBy": ["trajann-valoris", "valerian", "shield-captain"],
+    "image": "img/units/sagittarum.webp"
+  },
+  {
+    "id": "venerable-contemptor",
+    "name": "神聖蔑視者無畏",
+    "en": "CONTEMPTOR-ACHILLUS DREADNOUGHT",
+    "page": 53,
+    "section": "傳奇單位",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "legends": true,
+    "stats": { "M": "9", "T": "10", "SV": "2+", "W": "12", "LD": "5+", "OC": "3" },
+    "invuln": "4+",
+    "core": ["損傷4", "致命破滅 D3"],
+    "factionAbilities": ["御林武藝", "帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "英雄不死",
+        "text": ["每個單位每場戰鬥一次，本模型被消滅的階段結束時，骰 1D6；若結果為 2+，本模型以3 點W值的狀態復活，你必須將其部署在儘可能靠近其被消滅時的未接戰的位置"],
+        "once": "battle"
+      }
+    ],
+    "ranged": [
+      { "name": "凱瑞斯突擊炮", "range": "24", "a": "6", "skill": "2+", "s": "7", "ap": "-2", "d": "2", "kw": "連擊 1" },
+      { "name": "複合爆彈槍", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "速射 2" },
+      { "name": "多管熱熔", "range": "18", "a": "2", "skill": "2+", "s": "10", "ap": "-3", "d": "D3+2", "kw": "熱熔 3" }
+    ],
+    "melee": [
+      { "name": "蔑視者鐵拳", "range": "近戰", "a": "5", "skill": "2+", "s": "12", "ap": "-3", "d": "D3+3", "kw": "" }
+    ],
+    "base": "60mm圓底盤",
+    "keywords": ["載具", "無畏", "帝國", "機甲"],
+    "comp": "1個神聖蔑視者無畏模型",
+    "gear": ["本模型裝備有：一把複合爆彈槍，一把多管熱熔，一個蔑視者鐵拳", "本模型都可以將其裝備的多管熱熔替換為一門凱瑞斯突擊炮"],
+    "options": [
+      {
+        "id": "weapon",
+        "label": "武器",
+        "choices": [
+          { "id": "multi-melta", "label": "多管熱熔" },
+          { "id": "assault-cannon", "label": "凱瑞斯突擊炮" }
+        ]
+      }
+    ],
+    "note": ["原文英文名印作“CONTEMPTOR-ACHILLUS DREADNOUGHT”，與阿喀琉斯蔑視者無畏相同，應為誤植，照錄。", "關鍵詞“無畏”為譯者所加，譯者註明官方數據卡未寫無畏詞條。"],
+    "image": "img/units/venerable-contemptor.webp"
+  },
+  {
+    "id": "venerable-land-raider",
+    "name": "神聖蘭德掠襲者",
+    "en": "VENERABLE LAND RAIDER",
+    "page": 54,
+    "section": "傳奇單位",
+    "group": "載具",
+    "faction": "帝皇禁軍",
+    "legends": true,
+    "stats": { "M": "10", "T": "12", "SV": "2+", "W": "16", "LD": "7+", "OC": "1" },
+    "invuln": null,
+    "core": ["致命破滅 D6", "損傷 5"],
+    "factionAbilities": ["帝皇庇佑"],
+    "abilities": [
+      {
+        "name": "突擊跳板",
+        "text": ["你的移動階段中，本模型結束一次常規移動後，搭載本模型的單位可以進行一次強襲脫離移動"]
+      },
+      {
+        "name": "運輸載具",
+        "text": ["本模型可以搭載6個帝皇禁軍步兵模型"]
+      }
+    ],
+    "ranged": [
+      { "name": "獵殺飛彈", "range": "48", "a": "1", "skill": "2+", "s": "14", "ap": "-3", "d": "D3+3", "kw": "一次性" },
+      { "name": "神錘激光炮", "range": "48", "a": "2", "skill": "2+", "s": "12", "ap": "-3", "d": "D3+3", "kw": "" },
+      { "name": "風暴爆彈槍", "range": "24", "a": "2", "skill": "2+", "s": "5", "ap": "-1", "d": "1", "kw": "速射2" },
+      { "name": "雙聯重型爆彈槍", "range": "36", "a": "3", "skill": "2+", "s": "5", "ap": "-1", "d": "2", "kw": "速射2，連擊1，雙聯" }
+    ],
+    "melee": [
+      { "name": "裝甲外殼", "range": "近戰", "a": "6", "skill": "4+", "s": "8", "ap": "0", "d": "1", "kw": "" }
+    ],
+    "base": "外殼",
+    "keywords": ["載具", "外殼", "煙霧彈", "帝國", "運輸載具"],
+    "comp": "1個神聖蘭德掠襲者模型",
+    "gear": ["本模型裝備有：一具裝甲車體；兩門神錘激光炮；一把雙聯重型爆彈槍", "本模型可以裝備一把風暴爆彈槍", "本模型可以裝備一發獵殺飛彈"],
+    "options": [
+      { "id": "storm-bolter", "label": "裝備一把風暴爆彈槍", "toggle": true },
+      { "id": "missile", "label": "裝備一發獵殺飛彈", "toggle": true }
+    ],
+    "image": "img/units/venerable-land-raider.webp"
+  }
+]

@@ -1,0 +1,960 @@
+[
+  {
+    "id": "guardians-of-the-throne",
+    "name": "王座守衛",
+    "en": "GUARDIANS OF THE THRONE",
+    "page": 4,
+    "roles": ["重要資產", "肅清敵人"],
+    "unique": null,
+    "ability": {
+      "name": "武藝大師",
+      "text": ["近戰階段中，當一個友方帝皇禁軍單位被選中進行近戰攻擊時，該單位的近戰攻擊擁有以下能力之一：", "● 【連擊1】", "● 【致命一擊】"]
+    },
+    "katah": null,
+    "enhancements": [
+      {
+        "id": "bane-of-abominations",
+        "name": "邪愚之災",
+        "text": ["僅限帝皇禁軍模型，本模型攻擊敵方人物/巨獸/載具時造傷骰結果+1"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "castellans-mark",
+        "name": "堡主之印",
+        "text": ["僅限帝皇禁軍模型，雙方玩家完成部署後，你可以選擇至多3個友方帝皇禁軍單位將其重新部署；上述單位可以被放入戰略預備隊中，無論戰略預備隊中存在多少單位"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "eye-of-the-falcon",
+        "name": "獵鷹之眼",
+        "text": ["僅限帝皇禁軍模型，", "本模型獲得+1W；", "（全軍每場戰鬥一次）當本模型被選為（一輪）攻擊的目標時，你可以使用此能力，本模型獲得3+特殊保護"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "emperors-radiance",
+        "name": "帝皇輝光",
+        "text": ["僅限帝皇禁軍模型，本模型獲得以下武器："],
+        "req": { "faction": "帝皇禁軍" },
+        "weapons": [
+          { "name": "帝皇輝光", "range": "近戰", "a": "3", "skill": "2+", "s": "5", "ap": "-2", "d": "2", "kw": "額外攻擊" }
+        ]
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "superhuman-focus",
+        "name": "超凡專注",
+        "en": "SUPERHUMAN FOCUS",
+        "cp": 1,
+        "t": ["any:any"],
+        "when": "任意階段結束時",
+        "target": "一個未處於戰備狀態的友方帝皇禁軍單位",
+        "effect": ["該單位進入戰備狀態"],
+        "source": "帝皇禁軍：王座守衛",
+        "restriction": "每個戰鬥輪次中，同一單位只能被選為此戰略技能的目標一次"
+      },
+      {
+        "id": "shield-of-honour",
+        "name": "榮耀之盾",
+        "en": "SHIELD OF HONOUR",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段開始時",
+        "target": "一個友方帝皇禁軍步兵/騎乘單位",
+        "effect": ["當一個與你的上述單位接戰的敵方模型選擇攻擊目標時，若該敵方單位未選擇你的上述單位為攻擊目標，該敵方單位的攻擊的命中骰結果-1，造傷骰結果-1"],
+        "source": "帝皇禁軍：王座守衛"
+      },
+      {
+        "id": "in-auramite-clad",
+        "name": "金甲加身",
+        "en": "IN AURAMITE CLAD",
+        "cp": 1,
+        "t": ["fight:any", "shooting:enemy"],
+        "when": "近戰階段或敵方射擊階段，一個敵方單位以一個友方帝皇禁軍（禁軍守望者單位除外）單位為攻擊目標發動攻擊時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["直到該敵方單位完成攻擊，以上述帝皇禁軍單位為目標的攻擊獲得-1AP"],
+        "source": "帝皇禁軍：王座守衛"
+      },
+      {
+        "id": "unlimited-endurance",
+        "name": "無盡追獵",
+        "en": "UNLIMITED ENDURANCE",
+        "cp": 1,
+        "t": ["movement:own"],
+        "when": "你的移動階段，一個友方帝皇禁軍單位結束一次加速移動時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["直到本回合結束，上述單位的遠程攻擊獲得【突擊】；", "本次加速移動不會阻止你的上述單位宣佈衝鋒"],
+        "source": "帝皇禁軍：王座守衛"
+      },
+      {
+        "id": "prime-target",
+        "name": "首要目標",
+        "en": "PRIME TARGET",
+        "cp": 1,
+        "t": ["shooting:own"],
+        "when": "你的射擊階段，一個友方帝皇禁軍單位被選中進行射擊時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["上述單位的攻擊可以重投1顆命中骰、一顆造傷骰和一顆傷害骰"],
+        "source": "帝皇禁軍：王座守衛"
+      },
+      {
+        "id": "swift-as-the-eagle",
+        "name": "迅捷如鷹",
+        "en": "SWIFT AS THE EAGLE",
+        "cp": 1,
+        "t": ["movement:enemy"],
+        "when": "敵方移動階段，當一個敵方單位在一個友方未接戰誓言衛士單位8寸內結束移動時",
+        "target": "上述誓言衛士單位",
+        "effect": ["上述單位可以進行一次至多D3+3的常規移動"],
+        "source": "帝皇禁軍：王座守衛"
+      }
+    ]
+  },
+  {
+    "id": "aquilan-shield",
+    "name": "天鷹盾",
+    "en": "AQUILAN SHIELD",
+    "page": 6,
+    "roles": ["佔領與堅守"],
+    "unique": "盾衛團",
+    "ability": {
+      "name": "金甲衛士",
+      "text": ["當一個友方帝皇禁軍單位（巨獸/載具除外）位於任務點範圍內，以該單位為目標的遠程攻擊的S值大於上述單位的T值時，該攻擊的造傷骰結果-1"]
+    },
+    "katah": {
+      "ref": "salvus",
+      "name": "百步穿楊",
+      "en": "SALVUS",
+      "when": "你的射擊階段，一個處於備戰狀態的友方單位被選中進行射擊時",
+      "target": "上述處於備戰狀態的單位",
+      "effect": "上述單位無視對其BS、命中骰結果和造傷骰結果的修正",
+      "extra": "本單位的遠程攻擊獲得+6 射程"
+    },
+    "enhancements": [
+      {
+        "id": "serpent-staff-of-parelldo",
+        "name": "帕雷爾多的蛇杖",
+        "text": ["僅限帝皇禁軍模型，全軍每場戰鬥一次，任意階段開始時，該模型回復D3+3點W值"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "unerring-shot",
+        "name": "彈無虛發",
+        "text": ["僅限帝皇禁軍步兵模型，該單位的遠程攻擊獲得+1A"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["步兵"]
+        }
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "manoeuvre-and-fire",
+        "name": "機動射擊",
+        "en": "MANOEUBRE AND FIRE",
+        "cp": 1,
+        "t": ["movement:own"],
+        "when": "你的移動階段，一個友方帝皇禁軍單位被選中進行撤退時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["上述移動不會阻止該單位進行射擊/宣佈衝鋒"],
+        "source": "帝皇禁軍：天鷹盾"
+      },
+      {
+        "id": "tip-of-the-talon",
+        "name": "利爪尖鋒",
+        "en": "TIP OF THE TALON",
+        "cp": 1,
+        "t": ["shooting:own"],
+        "when": "你的射擊階段，一個友方帝皇禁軍單位被選中進行射擊時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["上述單位以位於其9寸內的敵方單位為遠程攻擊目標時，該攻擊獲得+1S"],
+        "source": "帝皇禁軍：天鷹盾"
+      },
+      {
+        "id": "rapid-reactions",
+        "name": "快速反應",
+        "en": "RAPID REACTIONS",
+        "cp": 1,
+        "t": ["movement:enemy"],
+        "when": "敵方移動階段，一個敵方單位結束一次撤退時",
+        "target": "你的一個該階段開始時與上述敵方單位接戰的帝皇禁軍步兵單位",
+        "effect": ["上述帝皇禁軍單位能且僅能以上述敵方單位為目標發動一次常規射擊攻擊"],
+        "source": "帝皇禁軍：天鷹盾"
+      }
+    ]
+  },
+  {
+    "id": "dread-host",
+    "name": "懼懲軍",
+    "en": "DREAD HOST",
+    "page": 7,
+    "roles": ["肅清敵人"],
+    "unique": "盾衛團",
+    "ability": {
+      "name": "帝皇之怒",
+      "text": ["友方帝皇禁軍單位可以重投衝鋒骰"]
+    },
+    "katah": {
+      "ref": "dacatarai",
+      "name": "橫掃千軍",
+      "en": "DACATARI",
+      "when": "近戰階段開始時",
+      "target": "一個處於備戰狀態的友方單位",
+      "effect": "上述單位以非巨獸/載具單位為目標的近戰攻擊能夠重投結果為1的命中骰",
+      "extra": "當一個敵方單位與本單位接戰並進行跟進/重整移動時，本次跟進/重整移動距離-2 寸"
+    },
+    "enhancements": [
+      {
+        "id": "golden-exemplar",
+        "name": "黃金典範",
+        "text": ["僅限帝皇禁軍模型，本模型的近戰攻擊獲得【劈砍 1】"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "flawless-swordsmanship",
+        "name": "無瑕劍技",
+        "text": ["僅限帝皇禁軍模型，本模型的近戰攻擊獲得【連擊 1】"],
+        "req": { "faction": "帝皇禁軍" }
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "lightning-wrath",
+        "name": "雷霆之怒",
+        "en": "LIGHTNING WRATH",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個友方帝皇禁軍單位被選中進行跟進時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["上述單位進行跟進時可以移動最多D3+3寸"],
+        "source": "帝皇禁軍：懼懲軍"
+      },
+      {
+        "id": "golden-light-of-the-moiraides",
+        "name": "金輝護體",
+        "en": "GOLDEN LIGHT OF THE MOIRAIDES",
+        "cp": 2,
+        "t": ["movement:own"],
+        "when": "你的移動階段，一個友方帝皇禁軍單位被選中進行一次入場移動時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["直到你的下個回合開始，以上述單位為目標的攻擊命中骰-1，敵方單位無法將上述單位選為警戒射擊的目標"],
+        "source": "帝皇禁軍：懼懲軍"
+      },
+      {
+        "id": "preternatural-rapidity",
+        "name": "超凡迅捷",
+        "en": "PRETERNATRAL RAPIDITY",
+        "cp": 1,
+        "t": ["movement:own"],
+        "when": "你的移動階段，一個友方帝皇禁軍單位結束一次加速移動時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["本次加速移動不會阻止上述單位宣佈衝鋒"],
+        "source": "帝皇禁軍：懼懲軍"
+      }
+    ]
+  },
+  {
+    "id": "emissaries-imperatus",
+    "name": "帝諭使",
+    "en": "EMISSARIES IMPERATUS",
+    "page": 8,
+    "roles": ["重要資產"],
+    "unique": "盾衛團",
+    "ability": {
+      "name": "王座傳令官",
+      "text": ["友方帝皇禁軍單位擁有先攻"]
+    },
+    "katah": {
+      "ref": "conservai",
+      "name": "運籌帷幄",
+      "en": "CONSERVAI",
+      "when": "你的指揮階段",
+      "target": "一個處於備戰狀態的友方單位",
+      "effect": "直到本回合結束，本單位處於戰鬥震懾/接戰狀態時不會妨礙其執行動作；執行動作不會妨礙該單位進行射擊",
+      "extra": "直到本回合結束，被選中進行加速移動/撤退不會阻止本單位執行動作"
+    },
+    "enhancements": [
+      {
+        "id": "blades-edge",
+        "name": "利刃之鋒",
+        "text": ["僅限帝皇禁軍模型，若本回閤中本單位進行過沖鋒移動，本模型的攻擊可以重投結果為1 的命中骰和造傷骰"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "auric-orb",
+        "name": "金輝法球",
+        "text": ["僅限帝皇禁軍模型，本模型獲得以下武器："],
+        "req": { "faction": "帝皇禁軍" },
+        "weapons": [
+          { "name": "金輝法球", "range": "12", "a": "3", "skill": "2+", "s": "1", "ap": "0", "d": "1", "kw": "針對：非巨獸/載具 2+，致盲閃光，毀滅傷害" }
+        ],
+        "after": ["致盲閃光：你的射擊階段中，本單位進行射擊後，選擇一個被本單位的金輝法球武器命中過的敵方單位，直到你的下回合結束，該敵方單位的命中骰結果-1"]
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "bearers-of-his-light",
+        "name": "帝皇威光",
+        "en": "BEARERS OF HIS LIGHT",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個友方帝皇禁軍單位被選中進行近戰時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["上述單位的近戰攻擊無視對其命中骰和造傷骰結果的修正"],
+        "source": "帝皇禁軍：帝諭使"
+      },
+      {
+        "id": "selfless-service",
+        "name": "捨身效命",
+        "en": "SELFLESS SERVICE",
+        "cp": 1,
+        "t": ["charge:enemy"],
+        "when": "敵方衝鋒階段",
+        "target": "你的一個位於一個敵方單位6寸內的未接戰帝皇禁軍單位，如若你選擇載具單位，該單位必須為人物/機甲單位",
+        "effect": ["你的上述單位宣佈一次衝鋒，若本次衝鋒骰結果（修正後）大於6，則將其改為6；選擇衝鋒目標時，你可以選擇任意位於你的上述單位6寸內的敵方單位"],
+        "source": "帝皇禁軍：天鷹盾",
+        "note": "原文的技能來源寫作“天鷹盾”，但此戰略技能列於帝諭使分隊頁。"
+      },
+      {
+        "id": "slayers-of-nightmares",
+        "name": "夢魘殺手",
+        "en": "SLAYERS OF NIGHTMARES",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個友方帝皇禁軍單位被選中進行近戰時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["上述單位的近戰攻擊以一個T值比自身更高的單位為目標時造傷骰結果+1"],
+        "source": "帝皇禁軍：帝諭使"
+      }
+    ]
+  },
+  {
+    "id": "emperors-chosen",
+    "name": "帝選團",
+    "en": "EMPEROR'S CHOSEN",
+    "page": 10,
+    "roles": ["重要資產"],
+    "unique": "盾衛團",
+    "ability": {
+      "name": "至尊統帥",
+      "text": ["當一個友方帝皇禁軍單位被選中進行攻擊，該單位的攻擊能夠重投1顆命中骰和1顆造傷骰"]
+    },
+    "katah": {
+      "ref": "rendax",
+      "name": "摧枯拉朽",
+      "en": "RENDAX",
+      "when": "近戰階段，一個處於備戰狀態的友方單位被選中進行近戰時",
+      "target": "上述處於備戰狀態的單位",
+      "effect": "上述單位的近戰攻擊獲得【致命一擊：巨獸/載具】",
+      "extra": "選擇一個與本單位接戰的敵方巨獸/載具單位，投1D6：結果為1~2，上述敵方單位受到1點致命傷；結果為3~5，上述敵方單位受到D3點致命傷；結果為6，上述敵方單位受到3點致命傷"
+    },
+    "enhancements": [
+      {
+        "id": "auric-mantle",
+        "name": "輝金披風",
+        "text": ["僅限帝皇禁軍步兵模型，以本單位為目標的攻擊的命中骰結果-1"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["步兵"]
+        }
+      },
+      {
+        "id": "armoury-relic",
+        "name": "武庫秘寶",
+        "text": ["僅限帝皇禁軍模型，該模型的近戰攻擊擁有【毀滅傷害】"],
+        "req": { "faction": "帝皇禁軍" }
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "superhuman-focus",
+        "name": "超凡專注",
+        "en": "SUPERHUMAN FOCUS",
+        "cp": 1,
+        "t": ["any:any"],
+        "when": "任意階段結束時",
+        "target": "一個未處於戰備狀態的友方帝皇禁軍單位",
+        "effect": ["該單位進入戰備狀態"],
+        "source": "帝皇禁軍：帝選團",
+        "restriction": "每個戰鬥輪次中，同一單位只能被選為此戰略技能的目標一次"
+      },
+      {
+        "id": "in-auramite-clad",
+        "name": "金甲加身",
+        "en": "IN AURAMITE CLAD",
+        "cp": 1,
+        "t": ["fight:any", "shooting:enemy"],
+        "when": "近戰階段或敵方射擊階段，一個敵方單位以一個友方帝皇禁軍（禁軍守望者單位除外）單位為攻擊目標發動攻擊時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["直到該敵方單位完成攻擊，以上述帝皇禁軍單位為目標的攻擊獲得-1AP"],
+        "source": "帝皇禁軍：帝選團"
+      },
+      {
+        "id": "impenetrable-bastion",
+        "name": "不破鐵壁",
+        "en": "IMPENETRABLE BASTION",
+        "cp": 1,
+        "t": ["movement:own"],
+        "when": "你的移動階段結束時",
+        "target": "一個友方帝皇禁軍單位（巨獸/載具單位除外）",
+        "effect": ["選擇一個由你控制的任務點，該任務點被佔領"],
+        "source": "帝皇禁軍：帝選團"
+      }
+    ]
+  },
+  {
+    "id": "shadowkeepers",
+    "name": "影牢監",
+    "en": "SHADOWKEEPERS",
+    "page": 11,
+    "roles": ["肅清敵人"],
+    "unique": "盾衛團",
+    "ability": {
+      "name": "影牢守衛",
+      "text": ["當一個友方帝皇禁軍單位（巨獸/載具除外）位於任務點範圍內，以該單位為目標的近戰攻擊的S值大於上述單位的T值時，該攻擊的造傷骰結果-1"]
+    },
+    "katah": {
+      "ref": "kaptaris",
+      "name": "克敵機先",
+      "en": "KAPTARIS",
+      "when": "近戰階段開始時",
+      "target": "一個處於備戰狀態的友方單位",
+      "effect": "以上述單位為目標的近戰攻擊的命中骰結果-1",
+      "extra": "選擇一個與本單位接戰的敵方單位，該敵方單位進行一次戰鬥震懾測試，本次戰鬥震懾測試結果-1，每個階段中你無法選擇相同單位"
+    },
+    "enhancements": [
+      {
+        "id": "gene-alchemy-rite",
+        "name": "基因鍊金秘儀",
+        "text": ["僅限帝皇禁軍模型，本模型獲得不覺疼痛 5+"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "tireless-destroyer",
+        "name": "無休破壞者",
+        "text": ["僅限帝皇禁軍步兵模型，本單位被選中進行跟進/重整移動時，本單位最多可以移動4寸；", "你可以為該次重整移動選擇任意一種模式，無論是否符合該模式的“移動前”限制。"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["步兵"]
+        }
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "grim-responsibility",
+        "name": "嚴酷職責",
+        "en": "GRIM RESPONSIBILITY",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個友方帝皇禁軍單位被選中進行近戰時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["該單位獲得【致命一擊：人物/巨獸】"],
+        "source": "帝皇禁軍：影牢監"
+      },
+      {
+        "id": "no-escape",
+        "name": "無路可逃",
+        "en": "NO ESCAPE",
+        "cp": 2,
+        "t": ["movement:enemy"],
+        "when": "敵方移動階段，一個敵方單位結束一次撤退時",
+        "target": "你的一個位於該敵方單位6寸內，且未接戰的帝皇禁軍步兵單位",
+        "effect": ["你的上述單位宣佈一次衝鋒，本次衝鋒只能選擇本階段進行過撤退且位於最大沖鋒距離內的敵方單位作為衝鋒目標"],
+        "source": "帝皇禁軍：影牢監"
+      },
+      {
+        "id": "indomitable-guardians",
+        "name": "不屈守衛",
+        "en": "INDOMITABLE GUARDIANS",
+        "cp": 1,
+        "t": ["fight:enemy"],
+        "when": "敵方近戰階段，一個敵方單位完成近戰時",
+        "target": "一個位於任務點範圍內且能夠進行近戰的友方帝皇禁軍單位",
+        "effect": ["你的上述單位獲得先攻，且該單位必須是你接下來被選中進行近戰的單位。"],
+        "source": "帝皇禁軍：影牢監"
+      }
+    ]
+  },
+  {
+    "id": "solar-watch",
+    "name": "太陽衛",
+    "en": "SOLAR WATCH",
+    "page": 12,
+    "roles": ["偵查"],
+    "unique": "盾衛團",
+    "ability": {
+      "name": "利爪突襲",
+      "text": ["當一個友方帝皇禁軍單位進行撤退時，本次撤退不會阻止該單位宣佈衝鋒"]
+    },
+    "katah": {
+      "ref": "calistus",
+      "name": "動如雷震",
+      "en": "CALISTUS",
+      "when": "你的移動階段，一個處於備戰狀態的友方單位被選中進行移動時",
+      "target": "上述處於備戰狀態的單位",
+      "effect": "當上述單位進行常規移動/加速移動/撤退時，可以穿過任意種類的模型",
+      "extra": "本單位的M值+2寸",
+      "note": "軍隊規則頁將此武藝 CALISTUS 譯作“雷霆出擊”，本頁譯作“動如雷震”。"
+    },
+    "enhancements": [
+      {
+        "id": "sally-forth",
+        "name": "出陣迎敵",
+        "text": ["僅限帝皇禁軍盾衛連長模型，你的衝鋒階段開始時，選擇你的一個位於本模型6寸內的帝皇禁軍步兵單位，若該單位本回合進行過加速移動，該加速移動不會阻止該單位宣佈衝鋒"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["盾衛連長"]
+        }
+      },
+      {
+        "id": "golden-aquila",
+        "name": "黃金天鷹（升級）",
+        "text": ["僅限帝皇禁軍步兵/騎乘模型（終結者單位除外），該單位的加速骰和衝鋒骰結果+1"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kwAny": ["步兵", "騎乘"],
+          "notKw": ["終結者"]
+        },
+        "upgrade": true
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "inexorable",
+        "name": "勢不可擋",
+        "en": "INEXORABLE",
+        "cp": 1,
+        "t": ["movement:own"],
+        "when": "你的移動階段，一個友方帝皇禁軍單位被選中進行移動時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["直到本回合結束，你的上述單位無視對其M值、加速骰和衝鋒骰的修正"],
+        "source": "帝皇禁軍：太陽衛"
+      },
+      {
+        "id": "at-spears-length",
+        "name": "長矛所及",
+        "en": "AT SPEAR'S LENGTH",
+        "cp": 1,
+        "t": ["movement:own"],
+        "when": "你的移動階段，一個友方帝皇禁軍單位被選中進行撤退時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["本次撤退不會阻止你的上述單位進行射擊"],
+        "source": "帝皇禁軍：太陽衛"
+      },
+      {
+        "id": "gravimetric-grenade",
+        "name": "重力手雷",
+        "en": "GRACIMETRIC GRENADE",
+        "cp": 1,
+        "t": ["charge:enemy"],
+        "when": "敵方衝鋒階段",
+        "target": "一個未接戰的友方帝皇禁軍單位",
+        "effect": ["選擇一個位於你的上述單位12寸內且可見的敵方單位，當該敵方單位宣佈衝鋒時，其衝鋒骰結果-1"],
+        "source": "帝皇禁軍：帝選團",
+        "note": "原文的技能來源寫作“帝選團”，但此戰略技能列於太陽衛分隊頁。"
+      }
+    ]
+  },
+  {
+    "id": "honoured-companions",
+    "name": "榮勳鐵衛",
+    "en": "HONOURED CAMPANIONS",
+    "page": 13,
+    "roles": ["佔領與堅守"],
+    "unique": null,
+    "ability": {
+      "name": "鐵衛守望",
+      "text": ["當一個友方誓言衛士單位位於任務點範圍內時，該單位能夠重投結果為1的造傷骰", "（誓言衛士：禁軍衛士兄弟會，禁軍哨衛兄弟會，禁軍守望者）"]
+    },
+    "katah": null,
+    "enhancements": [
+      {
+        "id": "shrike-jamming-array",
+        "name": "伯勞干擾陣列",
+        "text": ["僅限帝皇禁軍步兵模型，敵方單位被選中進行入場移動時無法被部署在本單位12寸內"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["步兵"]
+        }
+      },
+      {
+        "id": "swift-sentinels",
+        "name": "迅捷哨衛（升級）",
+        "text": ["僅限誓言衛士單位，每個單位每階段一次，當你對本單位使用英勇介入戰略技能時，", "本次使用CP消耗-1，且不會阻止其他單位使用此戰略技能"],
+        "req": {
+          "kw": ["誓言衛士"]
+        },
+        "upgrade": true
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "emperors-domain",
+        "name": "皆為王土",
+        "en": "EMPEROR'S DOMAIN",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個友方誓言衛士單位被選中進行重整移動時",
+        "target": "上述誓言衛士單位",
+        "effect": ["無論本次重整移動是否符合該模式的“移動前”限制，你可以為本次重整移動選擇目標重整模式", "這意味著，只要滿足目標重整模式的條件，你的上述單位就可以移出與敵方單位的交戰範圍。"],
+        "source": "帝皇禁軍：榮勳鐵衛"
+      },
+      {
+        "id": "avenge-the-fallen",
+        "name": "血債血償",
+        "en": "AVENGE THE FALLEN",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個低於起始兵力的友方誓言衛士單位被選中進行近戰時",
+        "target": "上述誓言衛士單位",
+        "effect": ["你的上述單位的近戰攻擊（人物模型的攻擊除外）獲得+2A"],
+        "source": "帝皇禁軍：榮勳鐵衛"
+      },
+      {
+        "id": "swift-as-the-eagle",
+        "name": "迅捷如鷹",
+        "en": "SWIFT AS THE EAGLE",
+        "cp": 1,
+        "t": ["movement:enemy"],
+        "when": "敵方移動階段，當一個敵方單位在一個未接戰的友方誓言衛士單位8寸內結束移動時",
+        "target": "上述誓言衛士單位",
+        "effect": ["上述單位可以進行一次至多D3+3的常規移動"],
+        "source": "帝皇禁軍：榮勳鐵衛"
+      }
+    ]
+  },
+  {
+    "id": "auric-champions",
+    "name": "金甲勇士",
+    "en": "AURIC CHAMPIONS",
+    "page": 14,
+    "roles": ["肅清敵人"],
+    "unique": null,
+    "ability": {
+      "name": "將星雲集",
+      "text": ["你的指揮階段中，你可以選擇一個敵方單位，該單位成為可怖之敵；", "直到你的下一個指揮階段開始，友方帝皇禁軍人物模型以可怖之敵單位為目標的攻擊的造傷骰結果+1"]
+    },
+    "katah": null,
+    "enhancements": [
+      {
+        "id": "veiled-blade-cloak",
+        "name": "隱刃披風",
+        "text": ["僅限帝皇禁軍模型，本模型獲得隱匿和獨行特工"],
+        "req": { "faction": "帝皇禁軍" }
+      },
+      {
+        "id": "inspirational-exemplar",
+        "name": "領袖表率",
+        "text": ["僅限帝皇禁軍步兵模型，全軍每個戰鬥輪次一次，任意階段開始時，選擇一個位於本模型9寸內的處於戰鬥震懾狀態的友方帝皇禁軍單位，該單位脫離戰鬥震懾狀態"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["步兵"]
+        }
+      },
+      {
+        "id": "superior-creation",
+        "name": "超凡造物",
+        "text": ["僅限帝皇禁軍步兵模型，每場戰鬥全軍一次，若本模型被消滅，該階段結束時，投1D6：若結果為2+，本模型以3點W值的狀態復活，你必須將其部署在儘可能靠近其被消滅時的未接戰的位置"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["步兵"]
+        }
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "gilded-champions",
+        "name": "鎏金勇士",
+        "en": "GILDED CHAMPIONS",
+        "cp": 1,
+        "t": ["any:any"],
+        "when": "任意階段，一個友方帝皇禁軍人物模型使用其數據卡上的“每個模型每場戰鬥一次”的技能時",
+        "target": "上述帝皇禁軍人物模型",
+        "effect": ["你的上述模型可以再使用一次其數據卡上的“每個模型每場戰鬥一次”的技能，但不能在相同階段"],
+        "source": "帝皇禁軍：金甲勇士",
+        "restriction": "每場戰鬥中，同一帝皇禁軍人物模型只能被選為此戰略技能的目標一次"
+      },
+      {
+        "id": "duty-unto-death",
+        "name": "至死盡忠",
+        "en": "DUTY UNTO DEATH",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個友方帝皇禁軍單位被選為攻擊目標時",
+        "target": "上述帝皇禁軍單位",
+        "effect": ["當你的上述單位中的一個模型被消滅時，若本階段該單位還未被選中進行近戰，投1D6，若該模型是一個人物模型則結果+1；", "結果為3+時，先不將該模型移出戰場，你的上述單位完成近戰，或本階段結束時（以先發生者為準），再將該模型移出戰場。"],
+        "source": "帝皇禁軍：金甲勇士"
+      }
+    ]
+  },
+  {
+    "id": "lion-of-the-emperor",
+    "name": "帝皇雄獅",
+    "en": "LION OF THE EMPEROR",
+    "page": 15,
+    "roles": ["干擾"],
+    "unique": null,
+    "ability": {
+      "name": "金光降下",
+      "text": ["敵方近戰階段結束時，若一個友方帝皇禁軍終結者單位未接戰，你可以將該單位放入戰略預備隊"]
+    },
+    "katah": null,
+    "enhancements": [
+      {
+        "id": "thunder-strike",
+        "name": "雷霆出擊",
+        "text": ["僅限盾衛連長穿著阿拉琉斯終結者裝甲模型，本單位可以在你的第一個移動階段中進行入場移動"],
+        "req": {
+          "units": ["shield-captain-allarus"]
+        }
+      },
+      {
+        "id": "might-of-the-lion",
+        "name": "雄獅顯威",
+        "text": ["僅限盾衛連長穿著阿拉琉斯終結者裝甲模型，全軍每個階段一次，你能夠以此單位為目標使用快速入場戰略技能，無論本階段該計謀是否已被用於其他目標；", "本次使用該戰略技能的CP消耗-1，本次使用不會妨礙其他單位使用該戰略技能"],
+        "req": {
+          "units": ["shield-captain-allarus"]
+        }
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "vigil-unending",
+        "name": "無盡守望",
+        "en": "VIGIL UNENDING",
+        "cp": 2,
+        "t": ["fight:any", "shooting:enemy"],
+        "when": "近戰階段或敵方射擊階段，一個敵方單位將一個友方帝皇禁軍終結者單位選為目標時",
+        "target": "上述帝皇禁軍終結者模型",
+        "effect": ["直到上述敵方單位完成攻擊，以你的上述單位為目標的攻擊獲得-1D"],
+        "source": "帝皇禁軍：帝皇雄獅"
+      },
+      {
+        "id": "unleash-the-lions",
+        "name": "雄獅出陣",
+        "en": "UNLEASH THE LIONS",
+        "cp": 1,
+        "t": ["command:own"],
+        "when": "你的指揮階段",
+        "target": "一個包含2+模型的友方帝皇禁軍終結者單位",
+        "effect": ["將該單位拆分為多個獨立單位，每個單位包含1個模型，上述單位的起始兵力為1"],
+        "source": "帝皇禁軍：帝皇雄獅"
+      },
+      {
+        "id": "fury-of-the-emperor",
+        "name": "帝皇之怒",
+        "en": "FURY OF THE EMPEROR",
+        "cp": 1,
+        "t": ["charge:own"],
+        "when": "你的衝鋒階段，一個在本回合進行過入場移動的友方帝皇禁軍終結者單位被選中宣佈衝鋒時",
+        "target": "上述帝皇禁軍終結者模型",
+        "effect": ["你的上述單位的衝鋒骰結果+2"],
+        "source": "帝皇禁軍：帝皇雄獅"
+      }
+    ]
+  },
+  {
+    "id": "might-of-moritoi",
+    "name": "亡魂廳顯威",
+    "en": "MIGHT OF MORITOI",
+    "page": 16,
+    "roles": ["佔領與堅守"],
+    "unique": null,
+    "ability": {
+      "name": "亡魂廳古賢",
+      "text": ["● 一個友方帝皇禁軍無畏單位為起始兵力時，該單位獲得+2OC", "● 一個友方帝皇禁軍無畏單位低於起始兵力時，該單位的攻擊可以重投結果為1 的命中骰", "● 一個友方帝皇禁軍無畏單位低於起始兵力的一半時，該單位的攻擊可以重投結果為1 的命中骰和造傷骰"]
+    },
+    "katah": null,
+    "enhancements": [
+      {
+        "id": "relic-of-the-undying",
+        "name": "不死軍遺物（升級）（全軍一次）",
+        "text": ["僅限帝皇禁軍無畏模型，本模型的近戰攻擊獲得+1A，+1S 和+1D"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["無畏"]
+        },
+        "upgrade": true
+      },
+      {
+        "id": "auspex-array",
+        "name": "鳥卜儀陣列（升級）（全軍一次）",
+        "text": ["僅限帝皇禁軍無畏模型，本模型獲得不覺疼痛 5+"],
+        "req": {
+          "faction": "帝皇禁軍",
+          "kw": ["無畏"]
+        },
+        "upgrade": true
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "honoured-interred",
+        "name": "榮光逝者",
+        "en": "HONOURED INTERRED",
+        "cp": 1,
+        "t": ["fight:any", "shooting:own"],
+        "when": "近戰階段或你的射擊階段",
+        "target": "一個友方帝皇禁軍無畏單位",
+        "effect": ["榮光逝者（光環）：你的位於上述單位 6 寸內的帝皇禁軍單位能夠重投結果為1的命中骰"],
+        "source": "帝皇禁軍：不死軍神威",
+        "note": "原文的技能來源寫作“不死軍神威”，與分隊名“亡魂廳顯威”不同，應為同一分隊的不同譯名。"
+      },
+      {
+        "id": "unceasing-onslaught",
+        "name": "無休攻勢",
+        "en": "UNCEASING ONSLAUGHT",
+        "cp": 1,
+        "t": ["movement:own"],
+        "when": "你的移動階段，一個友方帝皇禁軍無畏單位結束加速移動時",
+        "target": "上述帝皇禁軍無畏單位",
+        "effect": ["直到本回合結束，你的上述單位的遠程攻擊獲得突擊", "本次移動不會阻止該單位宣佈衝鋒"],
+        "source": "帝皇禁軍：不死軍神威"
+      },
+      {
+        "id": "unstoppable-momentum",
+        "name": "勢如破竹",
+        "en": "UNSTOPPABLE MOMENTUM",
+        "cp": 1,
+        "t": ["movement:own", "charge:own"],
+        "when": "你的移動/衝鋒階段，一個友方帝皇禁軍無畏單位被選中進行移動或宣佈衝鋒時",
+        "target": "上述帝皇禁軍無畏單位",
+        "effect": ["你的上述單位獲得機動"],
+        "source": "帝皇禁軍：不死軍神威"
+      }
+    ]
+  },
+  {
+    "id": "grav-assault-force",
+    "name": "鐵騎出陣",
+    "en": "GRAV-ASSULT FORCE",
+    "page": 17,
+    "roles": ["偵查"],
+    "unique": null,
+    "ability": {
+      "name": "閃焰護盾",
+      "text": ["一個友方反重力突擊單位對遠程攻擊擁有4+特殊保護"]
+    },
+    "katah": null,
+    "enhancements": [
+      {
+        "id": "assault-deployment",
+        "name": "突擊部署（升級）",
+        "text": ["僅限反重力突擊運輸載具模型，一個友方帝皇禁軍單位從本單位進行脫離移動時，直到本回合結束，該帝皇禁軍單位可以重投衝鋒骰，且敵方單位不能將該單位選為警戒射擊的目標"],
+        "req": {
+          "kw": ["反重力突擊", "運輸載具"]
+        },
+        "upgrade": true
+      },
+      {
+        "id": "grav-manoeuvres",
+        "name": "反重力機動（升級）",
+        "text": ["僅限反重力突擊單位，本單位進行撤退時，本次撤退不會阻止本單位進行射擊"],
+        "req": {
+          "kw": ["反重力突擊"]
+        },
+        "upgrade": true
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "victory-before-death",
+        "name": "死而後已",
+        "en": "VICTORY BEFORE DEATH",
+        "cp": 1,
+        "t": ["any:any"],
+        "when": "任意階段，一個位於一個任務點範圍內的友方反重力突擊單位被消滅時",
+        "target": "上述反重力突擊單位；即使該單位已被消滅，仍可成為此戰略技能的目標",
+        "effect": ["選擇一個符合以下條件的任務點：", "你的上述單位被消滅時，此任務點正被你控制；", "該任務點的範圍內沒有敵方單位（飛行器單位除外）；", "該任務點被佔領。"],
+        "source": "帝皇禁軍：鐵騎出陣"
+      },
+      {
+        "id": "advanced-stabilisers",
+        "name": "姿態穩定裝置",
+        "en": "ADVENCED STABILISERS",
+        "cp": 1,
+        "t": ["shooting:own"],
+        "when": "你的射擊階段，一個友方反重力突擊單位被選中進行射擊時",
+        "target": "上述反重力突擊單位",
+        "effect": ["該單位的遠程攻擊獲得突擊"],
+        "source": "帝皇禁軍：鐵騎出陣"
+      },
+      {
+        "id": "inevitable-annihilation",
+        "name": "死無可避",
+        "en": "INEVITABLE ANNIHILATION",
+        "cp": 1,
+        "t": ["shooting:own"],
+        "when": "你的射擊階段，當一個友方反重力突擊單位被選中進行射擊時",
+        "target": "上述反重力突擊單位",
+        "effect": ["你的單位可以無視BS和命中骰修正"],
+        "source": "帝皇禁軍：鐵騎出陣"
+      }
+    ]
+  },
+  {
+    "id": "null-maiden-vigil",
+    "name": "寂靜守望",
+    "en": "NULL MAIDEN VIGIL",
+    "page": 18,
+    "roles": ["干擾"],
+    "unique": null,
+    "allowsSistersWarlord": true,
+    "ability": {
+      "name": "寂靜修女會",
+      "text": ["你可以選擇一個友方寂靜修女人物模型作為你的主將", "友方控訴者單位具有戰線", "友方寂靜修女單位具有以下能力：", "　蔓延恐懼（光環）：敵方指揮階段的戰鬥震懾步驟中，每個位於該單位12寸內且具有靈能者關鍵詞/低於起始兵力的敵方單位必須進行一次戰鬥震懾測試，且此次戰鬥震懾測試結果 -1"]
+    },
+    "katah": null,
+    "enhancements": [
+      {
+        "id": "oblivion-knight",
+        "name": "湮滅騎士",
+        "text": ["僅限寂靜修女模型。該單位的攻擊的命中骰結果+1", "如果該單位以靈能者／處於戰鬥震懾狀態的單位為目標，該單位的攻擊的命中骰和造傷骰結果+1"],
+        "req": { "faction": "寂靜修女" }
+      },
+      {
+        "id": "eye-of-the-huntress",
+        "name": "女獵手之眼",
+        "text": ["僅限寂靜修女模型，己方移動階段，你可以選擇一個位於該單位12英寸內且可見的敵方單位。", "該敵方單位進行一次戰鬥震懾測試，且此次戰鬥震懾測試結果 -1"],
+        "req": { "faction": "寂靜修女" }
+      }
+    ],
+    "stratagems": [
+      {
+        "id": "anathema-blademastery",
+        "name": "滅魔劍技",
+        "en": "ANATHEMA BLADEMASTERY",
+        "cp": 1,
+        "t": ["fight:any"],
+        "when": "近戰階段，一個友方戒衛者小隊單位被選中進行近戰時",
+        "target": "上述戒衛者小隊單位",
+        "effect": ["你的上述單位的攻擊獲得【連擊 1】或【致命一擊】"],
+        "source": "帝皇禁軍：寂靜守望"
+      },
+      {
+        "id": "anathema-volley",
+        "name": "擾魔齊射",
+        "en": "ANATHEMA BLADEMASTERY",
+        "cp": 1,
+        "t": ["shooting:own"],
+        "when": "你的射擊近戰階段，一個友方控訴者小隊單位被選中進行射擊時",
+        "target": "上述控訴者小隊單位",
+        "effect": ["選擇一個被上述攻擊命中的敵方單位，直到該回合結束，該單位處於被追訴狀態；", "以被追訴單位為目標的攻擊獲得+1AP"],
+        "source": "帝皇禁軍：寂靜守望",
+        "note": "原文的英文名與“滅魔劍技”相同（ANATHEMA BLADEMASTERY），使用時機寫作“射擊近戰階段”，均照錄。"
+      },
+      {
+        "id": "purgation-sweep",
+        "name": "淨化掃蕩",
+        "en": "PERGATION SWEEP",
+        "cp": 1,
+        "t": ["shooting:own"],
+        "when": "你的射擊近戰階段，一個友方獵巫者小隊單位被選中進行射擊時",
+        "target": "上述獵巫者小隊單位",
+        "effect": ["你的上述單位的洪流攻擊的攻擊獲得+1A", "若上述攻擊以靈能者／處於戰鬥震懾狀態的單位為目標，該攻擊獲得+2A"],
+        "source": "帝皇禁軍：寂靜守望",
+        "note": "原文的使用時機寫作“射擊近戰階段”，照錄。“獵巫者小隊”即數據卡的“尋巫者小隊”。"
+      }
+    ]
+  }
+]

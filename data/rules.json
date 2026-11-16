@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "帝皇禁軍11版CODEX規則",
+    "edition": "瘋醫版",
+    "version": "1.0",
+    "changelogNote": "更新日誌（後續的規則勘誤、改動會以紅色、黃色或綠色字體標出）",
+    "changelog": [
+      { "date": "2026.10.02", "version": "0.1", "text": "根據洩露圖透內容初步編輯此文件，待CODEX正式發佈後查漏補缺" },
+      { "date": "2026.10.14", "version": "1.0", "text": "10月14日faq分數，修正文本錯誤，修正摩托連長和超凡造物錯漏" }
+    ]
+  },
+  "armyRules": [
+    {
+      "id": "martial-katah",
+      "name": "御林武藝",
+      "en": "Martial Ka'tah",
+      "page": 2,
+      "text": ["你的指揮階段開始時，擁有此能力的友方帝皇禁軍單位進入備戰狀態，一個友方單位處於備戰狀態時，你可以選擇以下武藝之一供該單位使用，若如此做，該單位不再處於備戰狀態，每個武藝技能會說明該武藝技能的使用時機和效果。"],
+      "katah": [
+        {
+          "id": "conservai",
+          "name": "運籌帷幄",
+          "en": "CONSERVAI",
+          "t": ["command:own"],
+          "when": "你的指揮階段",
+          "target": "一個處於備戰狀態的友方單位",
+          "effect": "直到本回合結束，處於戰鬥震懾/接戰狀態時不會阻止本單位執行動作，執行動作不會阻止本單位進行射擊"
+        },
+        {
+          "id": "calistus",
+          "name": "雷霆出擊",
+          "en": "CALISTUS",
+          "t": ["movement:own"],
+          "when": "你的移動階段，一個處於備戰狀態的友方單位被選中進行移動時",
+          "target": "上述處於備戰狀態的單位",
+          "effect": "當上述單位進行常規移動/加速移動/撤退時，可以穿過任意種類的模型"
+        },
+        {
+          "id": "salvus",
+          "name": "百步穿楊",
+          "en": "SALVUS",
+          "t": ["shooting:own"],
+          "when": "你的射擊階段，一個處於備戰狀態的友方單位被選中進行射擊時",
+          "target": "上述處於備戰狀態的單位",
+          "effect": "上述單位無視對其BS、命中骰結果和造傷骰結果的修正"
+        },
+        {
+          "id": "dacatarai",
+          "name": "橫掃千軍",
+          "en": "DACATARAI",
+          "t": ["fight:any"],
+          "when": "近戰階段開始時",
+          "target": "一個處於備戰狀態的友方單位",
+          "effect": "上述單位以非巨獸/載具單位為目標的近戰攻擊能夠重投結果為 1 的命中骰"
+        },
+        {
+          "id": "kaptaris",
+          "name": "克敵機先",
+          "en": "KAPTARIS",
+          "t": ["fight:any"],
+          "when": "近戰階段開始時",
+          "target": "一個處於備戰狀態的友方單位",
+          "effect": "以上述單位為目標的近戰攻擊的命中骰結果 -1"
+        },
+        {
+          "id": "rendax",
+          "name": "摧枯拉朽",
+          "en": "RANDAX",
+          "t": ["fight:any"],
+          "when": "近戰階段，一個處於備戰狀態的友方單位被選中進行近戰時",
+          "target": "上述處於備戰狀態的單位",
+          "effect": "上述單位的近戰攻擊獲得【致命一擊：巨獸/載具】"
+        }
+      ]
+    },
+    {
+      "id": "aegis-of-emperor",
+      "name": "帝皇庇佑",
+      "en": "AEGIS OF EMPEROR",
+      "page": 2,
+      "text": ["友方帝皇禁軍單位擁有對致命傷的不覺疼痛 5+"]
+    },
+    {
+      "id": "daughters-of-the-abyss",
+      "name": "深淵之女",
+      "en": "DAUGHTERS OF THE ABYSS",
+      "page": 2,
+      "text": [
+        "● 擁有此能力的友方寂靜修女單位擁有對靈能攻擊的不覺疼痛 3+",
+        "● 擁有此能力的友方寂靜修女單位擁有以下能力：",
+        "　絕靈滅域（光環）：位於本單位6寸內的帝皇禁軍單位擁有對靈能攻擊的不覺疼痛 5+",
+        "● 寂靜修女",
+        "　你可以在你的軍隊中加入寂靜修女單位，即使這些單位沒有帝皇禁軍陣營關鍵詞",
+        "　在你召集軍隊時，除非另有說明，",
+        "■ 你不能選擇寂靜修女作為你的軍隊陣營；",
+        "■ 你不能選擇一個寂靜修女模型作為你的主將"
+      ]
+    },
+    {
+      "id": "aquila-commander",
+      "name": "天鷹指揮官",
+      "en": "AQUILA COMMANDER",
+      "page": 3,
+      "text": ["每個戰鬥輪次開始時，若一個擁有此能力的模型是你的主將，你獲得 1 CP"]
+    },
+    {
+      "id": "shock-disembark-move",
+      "name": "突擊脫離移動",
+      "en": "SHOCK DISEMBARK MOVE",
+      "page": 3,
+      "text": [
+        "最大距離：3寸",
+        "滿足條件：友方單位滿足此移動類型的規則要求",
+        "　搭乘在一個位於場上的運輸載具模型中",
+        "　不是在本階段中搭乘上述運輸載具",
+        "效果：你的單位將根據部署規則的描述進行部署",
+        "移動期間：將你的單位中的每個模型部署在上述運輸載具的部署距離內",
+        "移動結束：你的單位在本回合結束前無法宣佈衝鋒"
+      ]
+    }
+  ],
+  "build": {
+    "pointsPresets": [1000, 1500, 2000, 3000],
+    "defaultPoints": 2000,
+    "dpLimit": null,
+    "uniqueKeywords": ["史詩英雄"],
+    "characterKeyword": "人物",
+    "enhancementsNeedCharacter": true,
+    "maxEnhancementsPerUnit": 1,
+    "sistersFaction": "寂靜修女"
+  }
+}
