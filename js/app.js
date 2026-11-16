@@ -7,6 +7,7 @@ import * as units from './views/units.js';
 import * as rules from './views/rules.js';
 import * as search from './views/search.js';
 import * as lists from './views/lists.js';
+import * as cloud from './views/cloud.js';
 import * as builder from './views/builder.js';
 import * as play from './views/play.js';
 import * as points from './views/points.js';
@@ -20,6 +21,7 @@ const routes = [
   [/^det\/([\w-]+)$/, rules.detachment, 'rules'],
   [/^search(?:\/(.*))?$/, search.view, 'search'],
   [/^lists$/, lists.index, 'lists'],
+  [/^cloud(?:\/([\w-]+))?$/, cloud.view, 'lists'],
   [/^list\/([\w-]+)$/, builder.view, 'lists'],
   [/^import\/(.+)$/, lists.importView, 'lists'],
   [/^play(?:\/([\w-]+))?$/, play.view, 'play'],
