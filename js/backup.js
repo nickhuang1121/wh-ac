@@ -13,6 +13,9 @@ export function cloudErrorText(err) {
     case 'auth/popup-blocked': return '瀏覽器擋下了登入視窗。請允許彈出式視窗，再按一次 Google 登入。';
     case 'auth/popup-closed-by-user':
     case 'auth/cancelled-popup-request': return '已取消登入。';
+    case 'auth/admin-restricted-operation':
+    case 'auth/user-disabled':
+    case 'auth/user-not-found': return '目前未開放註冊，請選擇已授權的 Google 帳號登入。';
     case 'auth/unauthorized-domain': return '此網站尚未加入 Firebase 的登入授權網域。';
     case 'permission-denied': return '沒有存取權限，請確認登入帳號後再試。';
     case 'auth/network-request-failed':
