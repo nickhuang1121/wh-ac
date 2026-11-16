@@ -374,11 +374,17 @@ function unitPicker(list, save, done) {
       const head = u.section !== section ? html`<li class="sec">${u.section}</li>` : '';
       section = u.section;
       const n = count(u.id);
-      return html`${head}<li><button type="button" class="row unit" data-add="${u.id}">
+      return html`${head}<li><div class="row unit static">
         ${unitThumb(u)}
         <span class="grow"><b>${u.name}</b><small>${u.group}・${u.en}</small>${P && P.extra ? html`<small>你的第 ${P.extra.from} 個起 ${P.extra.pts.join(' / ')} 分</small>` : ''}</span>
-        <span class="pts">${P ? fmtPts(minCost(P)) : '—'}<small>${P && P.pts.length > 1 ? ' 起' : ' 分'}</small><em class="have" data-have="${u.id}">${n ? `已有 ${n}` : ''}</em></span>
-      </button></li>`;
+        <span class="pick-side">
+          <span class="pts">${P ? fmtPts(minCost(P)) : '—'}<small>${P && P.pts.length > 1 ? ' 起' : ' 分'}</small><em class="have" data-have="${u.id}">${n ? `已有 ${n}` : ''}</em></span>
+          <span class="row-acts">
+            <button type="button" class="btn icon primary" data-add="${u.id}" title="加入軍表" aria-label="把「${u.name}」加入軍表"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <button type="button" class="btn icon" data-info="${u.id}" title="單位資訊" aria-label="查看「${u.name}」的單位資訊"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></button>
+          </span>
+        </span>
+      </div></li>`;
     })}</ul>`;
   };
   const d = openDialog({
@@ -387,18 +393,36 @@ function unitPicker(list, save, done) {
     body: html`
       <input type="search" class="dlg-search" placeholder="篩選名稱或關鍵詞" aria-label="篩選單位" autocomplete="off">
       <div class="dlg-list">${rows('')}</div>
-      <p class="muted small">點一下就加入，可以連續加；加完按右上角關閉。</p>`,
+      <p class="muted small">加號把單位加入軍表，可以連續加。資訊按鈕會先打開數據卡。加完按右上角關閉。</p>`,
   });
   const out = d.querySelector('.dlg-list');
-  on(d, 'input', '.dlg-search', (ev, el) => { out.innerHTML = String(rows(el.value.trim())); });
-  on(d, 'click', '[data-add]', (ev, el) => {
-    const u = db.unit[el.dataset.add];
+  const markHave = (id) => {
+    const n = count(id);
+    d.querySelectorAll(`[data-have="${CSS.escape(id)}"]`).forEach((el) => { el.textContent = n ? `已有 ${n}` : ''; });
+  };
+  const add = (u) => {
     addUnit(list, u.id);
     save();
-    el.querySelector('[data-have]').textContent = `已有 ${count(u.id)}`;
+    markHave(u.id);
     toast(`已加入 ${u.name}`);
-  });
+  };
+  on(d, 'input', '.dlg-search', (ev, el) => { out.innerHTML = String(rows(el.value.trim())); });
+  on(d, 'click', '[data-add]', (ev, el) => add(db.unit[el.dataset.add]));
+  on(d, 'click', '[data-info]', (ev, el) => openUnitInfo(db.unit[el.dataset.info], add));
   d.addEventListener('close', done);
+}
+
+function openUnitInfo(u, onAdd) {
+  const d = openDialog({
+    title: '單位資訊',
+    wide: true,
+    body: html`
+      <div class="actions top">
+        <button type="button" class="btn primary" data-add-here><i class="fa-solid fa-plus" aria-hidden="true"></i>加入軍表</button>
+      </div>
+      ${datasheet(u)}`,
+  });
+  on(d, 'click', '[data-add-here]', () => onAdd(u));
 }
 
 function detPicker(list, save, done) {

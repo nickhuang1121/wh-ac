@@ -1,12 +1,15 @@
 // Offline support.
 // Pages, scripts and data: network first (so new points show up as soon as you are online),
 // falling back to the last copy seen. Images: cache first.
-const CACHE = 'whac-v1';
+const CACHE = 'whac-v2';
 const SHELL = [
   './',
   'index.html',
   'manifest.json',
   'css/style.css',
+  'css/vendor/fontawesome/css/fontawesome.min.css',
+  'css/vendor/fontawesome/css/solid.min.css',
+  'css/vendor/fontawesome/webfonts/fa-solid-900.woff2',
   'js/app.js', 'js/calc.js', 'js/data.js', 'js/listops.js', 'js/store.js', 'js/ui.js', 'js/util.js',
   'js/views/builder.js', 'js/views/home.js', 'js/views/lists.js', 'js/views/parts.js', 'js/views/play.js',
   'js/views/points.js', 'js/views/rules.js', 'js/views/search.js', 'js/views/units.js',
