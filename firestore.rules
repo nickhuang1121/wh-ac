@@ -8,7 +8,8 @@ service cloud.firestore {
       function validRoster() {
         let data = request.resource.data;
         let roster = data.roster;
-        return data.keys().hasOnly(['version', 'updatedAt', 'roster'])
+        return data.keys().hasOnly(['version', 'updatedAt', 'roster', 'revision'])
+          && data.get('revision', '') is string
           && data.version == 1 && data.updatedAt == request.time
           && listId.matches('[A-Za-z0-9_-]+') && roster.id == listId
           && roster.name is string && roster.limit is number

@@ -35,13 +35,16 @@ export const getLists = () => read(KEYS.lists, []);
 export const getList = (id) => getLists().find((l) => l.id === id) || null;
 export function saveList(list) {
   const lists = getLists();
-  list.updated = Date.now();
   const i = lists.findIndex((l) => l.id === list.id);
+  list.updated = Math.max(Date.now(), (lists[i]?.updated || 0) + 1);
   if (i >= 0) lists[i] = list; else lists.push(list);
-  return write(KEYS.lists, lists);
+  const saved = write(KEYS.lists, lists);
+  if (saved) window.dispatchEvent(new CustomEvent('roster-saved', { detail: list.id }));
+  return saved;
 }
 export function deleteList(id) {
   write(KEYS.lists, getLists().filter((l) => l.id !== id));
+  clearBackupInfo(id);
   const play = read(KEYS.play, {});
   delete play[id];
   write(KEYS.play, play);
@@ -90,6 +93,14 @@ export function unpackList(p) {
     warlord: p.w >= 0 && entries[p.w] ? entries[p.w].eid : null,
     entries, created: Date.now(),
   };
+}
+
+// Backup preferences belong to this device, outside the roster that is uploaded or copied.
+const backupKey = (id) => 'whac.backup.v1.' + id;
+export const getBackupInfo = (id) => read(backupKey(id), null);
+export const setBackupInfo = (id, info) => write(backupKey(id), info);
+export function clearBackupInfo(id) {
+  try { localStorage.removeItem(backupKey(id)); } catch { /* storage unavailable */ }
 }
 
 // ── points override (from the points editor) ──

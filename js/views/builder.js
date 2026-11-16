@@ -7,6 +7,7 @@ import { addUnit, removeEntry, cloneEntry, sortedRows, optionLines, enhNames, at
 import { openDialog, printFragment } from '../ui.js';
 import { datasheet, unitThumb, detachmentMeta, emptyState } from './parts.js';
 import { detachmentBody } from './rules.js';
+import { backupStatus, watchBackups, connectBackups, upload, disableBackup } from '../backup.js';
 
 const openEntries = new Set();
 const LEVEL = { error: '問題', warn: '提醒', info: '說明' };
@@ -200,6 +201,19 @@ export function view(page, id) {
 
   const save = () => { if (!saveList(list)) toast('儲存失敗：瀏覽器的儲存空間可能已滿或被停用'); };
 
+  const refreshBackup = () => {
+    const button = page.querySelector('[data-act="backup"]');
+    if (!button) return;
+    const { enabled, busy, status, user } = backupStatus(list);
+    button.textContent = user ? '立即上傳' : '登入並上傳';
+    button.disabled = busy;
+    const toggle = page.querySelector('#b-auto-backup');
+    toggle.checked = enabled;
+    toggle.disabled = busy;
+    page.querySelector('#b-backup-status').textContent = status;
+    page.querySelector('#b-backup-account').textContent = user?.email || '';
+  };
+
   const refresh = () => {
     const c = computeList(list, db);
     page.querySelector('#b-summary').innerHTML = String(summaryBar(list, c));
@@ -232,6 +246,12 @@ export function view(page, id) {
       </div>
 
       <div class="summary" id="b-summary">${summaryBar(list, c)}</div>
+      <div class="actions wrap">
+        <button type="button" class="btn" data-act="backup">立即上傳</button>
+        <label class="check"><input type="checkbox" id="b-auto-backup">自動備份這份軍表</label>
+        <span class="muted small" id="b-backup-account"></span>
+        <span class="small" id="b-backup-status" role="status"></span>
+      </div>
 
       <section>
         <h2>分隊</h2>
@@ -270,6 +290,7 @@ export function view(page, id) {
           <button type="button" class="btn danger" data-act="del-list">刪除軍表</button>
         </div>
       </section>`);
+    refreshBackup();
     if (fk) {
       const el = page.querySelector(`[data-fk="${CSS.escape(fk)}"]`);
       if (el) el.focus({ preventScroll: true });
@@ -297,6 +318,10 @@ export function view(page, id) {
     if (e) { e.note = el.value; save(); }
   });
 
+  on(page, 'change', '#b-auto-backup', (ev, el) => {
+    if (el.checked) upload(id, 'enable', list);
+    else disableBackup(id);
+  });
   on(page, 'change', '#l-limit', (ev, el) => {
     if (el.value === 'custom') {
       const v = prompt('分數上限', String(list.limit));
@@ -327,6 +352,7 @@ export function view(page, id) {
     const act = el.dataset.act;
     const holder = el.closest('[data-eid]');
     const eid = holder ? holder.dataset.eid : null;
+    if (act === 'backup') return upload(id, 'manual', list);
     if (act === 'add-unit') return unitPicker(list, save, draw);
     if (act === 'add-det') return detPicker(list, save, draw);
     if (act === 'rm-det') { list.dets = list.dets.filter((d) => d !== el.dataset.id); save(); return draw(); }
@@ -355,6 +381,9 @@ export function view(page, id) {
   });
 
   draw();
+  const stopWatching = watchBackups(refreshBackup);
+  connectBackups().catch(() => {}); // Local editing remains available offline.
+  return stopWatching;
 }
 
 // ── pickers ──
