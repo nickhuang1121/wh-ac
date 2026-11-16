@@ -1,4 +1,4 @@
-// Everything the site remembers lives in this browser's localStorage.
+// Local rosters, preferences and play sessions are available offline.
 
 const KEYS = {
   lists: 'whac.lists.v1',

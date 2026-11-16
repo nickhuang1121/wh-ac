@@ -26,6 +26,7 @@ export function index(page) {
       <h1>軍表</h1>
       <div class="actions top">
         <button type="button" class="btn primary" data-act="new">＋ 新軍表</button>
+        <a class="btn" href="#/cloud">雲端軍表</a>
       </div>
       ${lists.length ? html`
         <ul class="rows">
@@ -46,7 +47,7 @@ export function index(page) {
           <button class="btn" type="submit">匯入</button>
         </form>
       </details>
-      <p class="muted small">軍表只存在這台裝置的瀏覽器裡；清除瀏覽資料會一併清掉，換裝置請用分享連結帶過去。</p>`);
+      <p class="muted small">編輯時會自動儲存到本機。換裝置前，可用「雲端軍表」存檔，或複製分享連結。</p>`);
   };
   draw();
 

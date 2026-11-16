@@ -261,6 +261,7 @@ export function view(page, id) {
         <h2>使用這份軍表</h2>
         <div class="actions wrap">
           <a class="btn primary" href="#/play/${list.id}">進入遊玩模式</a>
+          <a class="btn" href="#/cloud/${list.id}">雲端軍表</a>
           <button type="button" class="btn" data-act="share">複製分享連結</button>
           <button type="button" class="btn" data-act="copy">複製文字版</button>
           <button type="button" class="btn" data-act="print">列印軍表</button>

@@ -70,7 +70,7 @@ export function view(page) {
     <footer class="foot muted small">
       <p>愛好者自製的非官方工具。規則文字轉錄自《${m.title}》${m.edition} ${m.version}，僅將簡體字形轉為繁體，術語維持原文。</p>
       <p>Warhammer 40,000 與相關名稱為 Games Workshop Limited 的商標，本站與其無關。</p>
-      <p>軍表與設定只存在這台裝置的瀏覽器裡。</p>
+      <p>軍表與設定儲存在本機。登入後，可將選定的軍表另存到雲端。</p>
     </footer>`);
 
   on(page, 'change', '#set-legends', (ev, el) => {

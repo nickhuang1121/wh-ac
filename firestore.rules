@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/rosters/{listId} {
+      function isOwner() {
+        return request.auth != null && request.auth.uid == uid;
+      }
+      function validRoster() {
+        let data = request.resource.data;
+        let roster = data.roster;
+        return data.keys().hasOnly(['version', 'updatedAt', 'roster'])
+          && data.version == 1 && data.updatedAt == request.time
+          && listId.matches('[A-Za-z0-9_-]+') && roster.id == listId
+          && roster.name is string && roster.limit is number
+          && roster.dets is list && roster.entries is list;
+      }
+      allow read, delete: if isOwner();
+      allow create, update: if isOwner() && validRoster();
+    }
+  }
+}
