@@ -1,18 +1,6 @@
 import { html, on, toast } from '../util.js';
 import { getList, getLists, saveList } from '../store.js';
-
-function errorText(err) {
-  switch (err.code) {
-    case 'auth/popup-blocked': return '瀏覽器擋下了登入視窗。請允許彈出式視窗，再按一次 Google 登入。';
-    case 'auth/popup-closed-by-user':
-    case 'auth/cancelled-popup-request': return '已取消登入。';
-    case 'auth/unauthorized-domain': return '此網站尚未加入 Firebase 的登入授權網域。';
-    case 'permission-denied': return '沒有存取權限，請確認登入帳號後再試。';
-    case 'auth/network-request-failed':
-    case 'unavailable': return '無法連上雲端，請確認網路連線後再試。';
-    default: return err.message || '操作失敗，請再試一次。';
-  }
-}
+import { recordBackup, forgetBackup, cloudErrorText } from '../backup.js';
 
 export function view(page, selectedId) {
   document.title = '雲端軍表 · 帝皇禁軍';
@@ -76,7 +64,7 @@ export function view(page, selectedId) {
       const result = await action(session);
       if (session === generation) status.textContent = result || '';
     } catch (err) {
-      if (session === generation) status.textContent = errorText(err);
+      if (session === generation) status.textContent = cloudErrorText(err);
     } finally {
       if (session === generation) { busy = false; draw(); }
     }
@@ -114,11 +102,13 @@ export function view(page, selectedId) {
     const backup = backups.find((b) => b.id === id);
     if (act === 'load') {
       return run('正在載入軍表…', async (session) => {
-        const list = await cloud.loadBackup(user.uid, id);
+        const stored = await cloud.loadBackup(user.uid, id, { withRevision: true });
+        const list = stored.roster;
         if (session !== generation) return;
         const local = getList(id);
         if (local && !confirm(`以雲端存檔覆寫本機的「${local.name}」？`)) return;
         if (!saveList(list)) throw new Error('本機儲存失敗，請確認瀏覽器儲存空間。');
+        recordBackup(list, user.uid, cloud.revisionOf(stored));
         toast('已載入雲端軍表');
         location.hash = `#/list/${id}`;
       });
@@ -131,8 +121,10 @@ export function view(page, selectedId) {
       if (!confirm(prompt)) return;
     }
     run(act === 'delete' ? '正在刪除…' : '正在儲存…', async (session) => {
-      await cloud.changeBackup(user.uid, id, backup, list);
+      const revision = await cloud.changeBackup(user.uid, id, backup, list);
       if (session !== generation) return;
+      if (list) recordBackup(list, user.uid, revision);
+      else forgetBackup(id, user.uid);
       const message = list ? '已儲存到雲端。' : '已刪除雲端存檔。';
       try {
         await refresh(session);
