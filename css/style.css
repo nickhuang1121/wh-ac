@@ -400,6 +400,8 @@ dialog.dlg::backdrop { background: rgba(0, 0, 0, .62); }
 .seg button[aria-pressed="true"], .seg button[aria-selected="true"] { background: var(--gold); color: var(--ink); font-weight: 700; }
 .seg i { font-style: normal; font-size: .72rem; margin-left: 5px; padding: 0 6px; border-radius: 999px; background: rgba(128, 128, 128, .28); }
 .tabsel { margin-bottom: 12px; }
+.play-sheets { display: grid; gap: 14px; }
+.play-sheets .sheet { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
 .pgroups { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 430px), 1fr)); align-items: start; }
 .pgroup { display: grid; gap: 8px; }
 .pgroup.joined { padding: 8px; border: 1px dashed var(--gold); border-radius: 14px; }

@@ -3,8 +3,8 @@ import { html, on, textBlock, toast, fmtPts } from '../util.js';
 import { db } from '../data.js';
 import { computeList } from '../calc.js';
 import { getList, getLists, getPlay, savePlay, defaultPlay } from '../store.js';
-import { sortedRows, optionLines, enhNames } from '../listops.js';
-import { PHASES, matchTiming, statBar, weaponTables, abilityList, stratagemCard, katahCard, enhancementCard, emptyState } from './parts.js';
+import { sortedRows, enhNames } from '../listops.js';
+import { PHASES, matchTiming, datasheet, stratagemCard, katahCard, enhancementCard, emptyState } from './parts.js';
 import { listRow } from './lists.js';
 import { armyRule } from './rules.js';
 
@@ -54,21 +54,12 @@ export function view(page, id) {
   const save = () => savePlay(id, st);
 
   const katahRule = db.rules.armyRules.find((r) => r.katah);
-  const hasKatah = (u) => Boolean(katahRule) && u.factionAbilities.includes(katahRule.name);
-  const wounds = (r) => {
-    const per = parseInt(r.u.stats.W, 10) || 1;
-    const total = per * r.models;
-    const lost = Math.min(total, Math.max(0, st.lost[r.e.eid] || 0));
-    return { per, total, lost, remain: total - lost, alive: Math.ceil((total - lost) / per) };
-  };
-  // once-per-battle / once-per-round abilities; army-wide ones are shared by every copy of the unit
-  const onceKey = (r, a, i) => `${a.once === 'round' ? 'r' : 'b'}|${a.limit && a.limit.includes('全軍') ? r.u.id : r.e.eid}|${i}`;
-
-  // leaders are shown together with the unit they joined
-  const groups = [];
+  const seen = new Set();
+  const units = [];
   rows.forEach((r) => {
-    if (r.e.attach && rows.some((x) => x.e.eid === r.e.attach)) return;
-    groups.push([].concat(rows.filter((x) => x.e.attach === r.e.eid), [r]));
+    if (seen.has(r.u.id)) return;
+    seen.add(r.u.id);
+    units.push(r.u);
   });
 
   const strats = () => {
@@ -78,51 +69,10 @@ export function view(page, id) {
   };
   const katahs = () => (katahRule ? katahRule.katah.filter((k) => matchTiming(k.t, st.phase, st.turn)) : []);
 
-  function unitCard(r) {
-    const u = r.u;
-    const eid = r.e.eid;
-    const w = wounds(r);
-    const enh = enhNames(r);
-    const sub = optionLines(r).concat(enh.map((x) => `強化：${x.name}`));
-    const once = u.abilities.map((a, i) => ({ a, i })).filter((x) => x.a.once);
-    return html`
-      <article class="pu ${w.remain === 0 ? 'dead' : ''}" data-eid="${eid}">
-        <header>
-          <div class="grow">
-            <h3>${u.name}${list.warlord === eid ? html` <span class="tag warlord">主將</span>` : ''}${w.remain === 0 ? html` <span class="tag dead">已全滅</span>` : ''}</h3>
-            ${sub.length ? html`<small>${sub.join('・')}</small>` : ''}
-            ${r.e.note ? html`<small class="unote">${r.e.note}</small>` : ''}
-          </div>
-          ${hasKatah(u) ? html`<button type="button" class="chip ready" data-act="ready" aria-pressed="${st.ready[eid] ? 'true' : 'false'}">${st.ready[eid] ? '備戰中' : '未備戰'}</button>` : ''}
-        </header>
-        ${statBar(u)}
-        <div class="wounds">
-          <button type="button" class="btn icon" data-act="dmg" data-d="1" aria-label="失去 1 點耐傷" ${w.remain === 0 ? 'disabled' : ''}>−</button>
-          <span class="wnum"><b>${w.remain}</b> / ${w.total} W${r.models > 1 ? html`<small>${w.alive} / ${r.models} 個模型</small>` : ''}</span>
-          <button type="button" class="btn icon" data-act="dmg" data-d="-1" aria-label="回復 1 點耐傷" ${w.lost === 0 ? 'disabled' : ''}>＋</button>
-        </div>
-        ${once.length ? html`
-          <div class="once">
-            ${once.map((x) => html`<label class="check ${st.used[onceKey(r, x.a, x.i)] ? 'used' : ''}">
-              <input type="checkbox" data-once="${onceKey(r, x.a, x.i)}" ${st.used[onceKey(r, x.a, x.i)] ? 'checked' : ''}>
-              <span>${x.a.name}<small>${x.a.limit || (x.a.once === 'round' ? '每輪一次' : '每場一次')}</small></span>
-            </label>`)}
-          </div>` : ''}
-        <details data-open="${eid}" ${st.open[eid] ? 'open' : ''}>
-          <summary>武器與技能</summary>
-          ${weaponTables(u)}
-          ${abilityList(u)}
-          ${enh.filter((x) => x.info).map((x) => html`<h4 class="wt">強化升級</h4>${enhancementCard(x.info.det, x.info.enh)}`)}
-          <p><a href="#/unit/${u.id}">完整數據卡 ›</a></p>
-        </details>
-      </article>`;
-  }
-
   function body() {
     if (st.tab === 'units') {
-      if (!rows.length) return emptyState('這份軍表還沒有單位', html`<a class="btn" href="#/list/${list.id}">去加入單位</a>`);
-      return html`<div class="pgroups">${groups.map((g) => html`<div class="pgroup ${g.length > 1 ? 'joined' : ''}">
-        ${g.length > 1 ? html`<p class="joined-label">合併單位</p>` : ''}${g.map(unitCard)}</div>`)}</div>`;
+      if (!units.length) return emptyState('這份軍表還沒有單位', html`<a class="btn" href="#/list/${list.id}">去加入單位</a>`);
+      return html`<div class="play-sheets">${units.map((u) => datasheet(u, { build: false }))}</div>`;
     }
     if (st.tab === 'strats') {
       if (!c.dets.length) return emptyState('這份軍表還沒有選分隊', html`<a class="btn" href="#/list/${list.id}">去選分隊</a>`);
@@ -136,9 +86,7 @@ export function view(page, id) {
     if (st.tab === 'katah') {
       if (!katahRule) return emptyState('沒有武藝資料', '');
       const hit = katahs();
-      const readyCount = rows.filter((r) => hasKatah(r.u) && st.ready[r.e.eid]).length;
       return html`
-        <p class="muted small">${readyCount} 個單位備戰中。單位使用武藝後不再處於備戰狀態，記得在「單位」分頁把它切回未備戰。</p>
         ${hit.length ? html`<div class="cards">${hit.map((k) => {
           const spec = c.dets.find((d) => d.katah && d.katah.ref === k.id);
           return spec ? html`<div><p class="from">${spec.name} 的武藝專長</p>${katahCard(spec.katah, spec.katah.extra)}</div>` : katahCard(k);
@@ -160,8 +108,6 @@ export function view(page, id) {
   }
 
   const draw = () => {
-    // the toggle event is asynchronous, so read the cards' current state before replacing them
-    page.querySelectorAll('details[data-open]').forEach((d) => { if (d.open) st.open[d.dataset.open] = true; else delete st.open[d.dataset.open]; });
     const nStrats = c.dets.length ? strats().length : 0;
     const nKatah = katahs().length;
     const badge = { strats: nStrats, katah: nKatah };
@@ -183,7 +129,6 @@ export function view(page, id) {
 
       <div class="actions wrap">
         <button type="button" class="btn small" data-act="next-round">下一輪</button>
-        <button type="button" class="btn small" data-act="ready-all">全軍進入備戰</button>
         ${'wakeLock' in navigator ? html`<button type="button" class="btn small" data-act="wake" aria-pressed="${wantWake ? 'true' : 'false'}">螢幕常亮：${wantWake ? '開' : '關'}</button>` : ''}
         <button type="button" class="btn small danger" data-act="reset">新的一局</button>
       </div>
@@ -206,26 +151,12 @@ export function view(page, id) {
       <div class="play-body">${body()}</div>`);
   };
 
-  page.addEventListener('toggle', (ev) => {
-    const el = ev.target;
-    if (!(el instanceof HTMLDetailsElement) || !el.dataset.open) return;
-    if (el.open) st.open[el.dataset.open] = true; else delete st.open[el.dataset.open];
-    save();
-  }, true);
-
   on(page, 'click', '[data-turn]', (ev, el) => { st.turn = el.dataset.turn; save(); draw(); });
   on(page, 'click', '[data-phase]', (ev, el) => { st.phase = el.dataset.phase; save(); draw(); });
   on(page, 'click', '[data-tab]', (ev, el) => { st.tab = el.dataset.tab; save(); draw(); });
-  on(page, 'change', '[data-once]', (ev, el) => {
-    if (el.checked) st.used[el.dataset.once] = true; else delete st.used[el.dataset.once];
-    save();
-    draw();
-  });
 
   on(page, 'click', '[data-act]', (ev, el) => {
     const act = el.dataset.act;
-    const holder = el.closest('[data-eid]');
-    const eid = holder ? holder.dataset.eid : null;
     if (act === 'count') {
       const k = el.dataset.k;
       const min = (COUNTERS.find((x) => x[0] === k) || [])[2] || 0;
@@ -233,17 +164,7 @@ export function view(page, id) {
     } else if (act === 'next-round') {
       st.round = (Number(st.round) || 1) + 1;
       Object.keys(st.used).forEach((k) => { if (k.startsWith('r|')) delete st.used[k]; });
-      toast(`第 ${st.round} 戰鬥輪：每輪一次的技能已重置`);
-    } else if (act === 'ready-all') {
-      rows.forEach((r) => { if (hasKatah(r.u) && wounds(r).remain > 0) st.ready[r.e.eid] = true; });
-      toast(`擁有${katahRule ? katahRule.name : '武藝'}的單位已進入備戰狀態`);
-    } else if (act === 'ready') {
-      if (st.ready[eid]) delete st.ready[eid]; else st.ready[eid] = true;
-    } else if (act === 'dmg') {
-      const r = rows.find((x) => x.e.eid === eid);
-      if (!r) return;
-      const w = wounds(r);
-      st.lost[eid] = Math.min(w.total, Math.max(0, w.lost + Number(el.dataset.d)));
+      toast(`第 ${st.round} 戰鬥輪`);
     } else if (act === 'spend') {
       const cost = Number(el.dataset.cp) || 0;
       if (st.cp < cost) { toast(`CP 不足（需要 ${cost}，目前 ${st.cp}）`); return; }
@@ -254,7 +175,7 @@ export function view(page, id) {
       if (wantWake) acquireWake().then((ok) => { if (!ok) { wantWake = false; toast('這個瀏覽器目前無法保持螢幕常亮'); draw(); } });
       else releaseWake();
     } else if (act === 'reset') {
-      if (!confirm('開始新的一局？戰鬥輪、CP、VP、傷害與已使用的技能都會歸零。')) return;
+      if (!confirm('開始新的一局？戰鬥輪、CP 與 VP 都會歸零。')) return;
       st = Object.assign(defaultPlay(), { tab: st.tab });
     } else {
       return;
